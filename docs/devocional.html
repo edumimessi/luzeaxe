@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sentido do Dia — Luz e Axé</title>
+  <meta name="description" content="Uma reflexão diária inspirada na sabedoria das tradições afro-brasileiras — com lembrete e app instalável." />
+  <meta name="theme-color" content="#1c1108" />
+  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Sentido do Dia" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html,body { min-height:100%; }
+    body { min-height:100vh; padding:max(32px,env(safe-area-inset-top)) 20px 56px; font-family:"Crimson Pro",Georgia,serif; color:#f0e6d8;
+      background:radial-gradient(ellipse at 50% 0%, #3a2416 0%, #1c1108 55%, #0c0602 100%); background-attachment:fixed; }
+    .rays { position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
+      background:radial-gradient(circle at 50% -10%, rgba(232,184,102,.16), transparent 45%); }
+    .wrap { position:relative; z-index:1; width:100%; max-width:620px; margin:0 auto; }
+    header { text-align:center; margin-bottom:20px; }
+    .sun { width:44px; height:44px; margin:0 auto 8px; display:block; filter:drop-shadow(0 0 14px rgba(232,184,102,.5)); }
+    .kicker { font-family:"Cinzel",serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:#8fc9a8; }
+    .data { font-size:14px; color:#c3b39a; margin-top:6px; text-transform:capitalize; }
+    .card { background:rgba(255,255,255,.045); border:1px solid rgba(232,184,102,.18); border-radius:20px; padding:24px 22px; }
+    .tema { display:inline-block; font-family:"Cinzel",serif; font-size:10.5px; letter-spacing:1.4px; text-transform:uppercase;
+      color:#1c1108; background:#e8b866; padding:4px 11px; border-radius:20px; }
+    .texto { font-size:19px; line-height:1.74; color:#f4ecdd; margin:16px 0 4px; }
+    .lembrete { margin-top:22px; background:rgba(143,201,168,.07); border:1px solid rgba(143,201,168,.24);
+      border-radius:16px; padding:16px 18px; }
+    .lembrete h3 { font-family:"Cinzel",serif; font-size:12px; letter-spacing:1px; text-transform:uppercase; color:#8fc9a8; margin-bottom:4px; }
+    .lembrete p { font-size:13.5px; color:#c9bfa8; margin-bottom:12px; line-height:1.5; }
+    .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    input[type=time] { font-family:"Crimson Pro",serif; font-size:16px; color:#f0e6d8; background:rgba(0,0,0,.3);
+      border:1px solid rgba(232,184,102,.35); border-radius:10px; padding:9px 12px; }
+    .btn { font-family:"Cinzel",serif; font-size:13px; cursor:pointer; border-radius:12px; padding:11px 16px;
+      border:1px solid rgba(232,184,102,.4); background:rgba(232,184,102,.15); color:#f7e6c6; }
+    .btn:hover { background:rgba(232,184,102,.26); }
+    .btn.gr { border-color:rgba(143,201,168,.4); background:rgba(143,201,168,.12); color:#d3ecdd; }
+    .navlinks { margin-top:22px; display:flex; gap:9px; justify-content:center; flex-wrap:wrap; }
+    .backlink { font-size:12.5px; color:#c3b39a; text-decoration:none; border:1px solid rgba(255,255,255,.14); padding:6px 12px; border-radius:10px; }
+    .backlink:hover { background:rgba(255,255,255,.06); }
+    .foot { text-align:center; margin-top:18px; font-size:11.5px; color:#8a7a63; line-height:1.6; }
+  </style>
+</head>
+<body>
+  <div class="rays"></div>
+  <div class="wrap">
+    <header>
+      <svg class="sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g fill="none" stroke="#e8b866" stroke-width="3" stroke-linecap="round">
+          <circle cx="50" cy="50" r="15" fill="#e8b866" stroke="none"/><circle cx="50" cy="50" r="24" opacity=".8"/>
+          <g opacity=".9"><line x1="50" y1="6" x2="50" y2="16"/><line x1="50" y1="84" x2="50" y2="94"/>
+          <line x1="6" y1="50" x2="16" y2="50"/><line x1="84" y1="50" x2="94" y2="50"/>
+          <line x1="19" y1="19" x2="26" y2="26"/><line x1="74" y1="74" x2="81" y2="81"/>
+          <line x1="81" y1="19" x2="74" y2="26"/><line x1="26" y1="74" x2="19" y2="81"/></g>
+        </g>
+      </svg>
+      <div class="kicker">Sentido do Dia</div>
+      <div class="data" id="data">…</div>
+    </header>
+
+    <div class="card">
+      <span class="tema" id="tema">…</span>
+      <div class="texto" id="texto">Preparando a reflexão…</div>
+
+      <div class="lembrete">
+        <h3>🔔 Lembrete diário</h3>
+        <p>Escolha um horário e adicione ao seu calendário — o celular te lembra todo dia da sua reflexão.</p>
+        <div class="row">
+          <input type="time" id="hora" value="07:00" />
+          <button class="btn" id="criar">Criar lembrete diário</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="navlinks">
+      <a class="backlink" href="index.html">Início</a>
+      <a class="backlink" href="principios.html">Os 5 Princípios</a>
+    </div>
+
+    <p class="foot" id="instala"></p>
+    <p class="foot">Reflexões inspiradas em <em>Tradições Afro-Brasileiras</em>, Dr. Eduardo Mimessi (2025).</p>
+  </div>
+
+  <script>
+    const REFLEXOES = [
+      {tema:"Ancestralidade", texto:"Ninguém começa do nada. Antes de você, muitos caminharam, sofreram e amaram para que você chegasse até aqui. Saber-se herdeiro de uma longa história é descobrir que a sua vida não é um acaso solto no tempo, mas um elo numa corrente que vem de longe e segue adiante."},
+      {tema:"Axé", texto:"Axé é a força que faz a vida acontecer — e ela não se guarda parada. Renova-se quando vira gesto, trabalho e cuidado. Onde, hoje, a sua energia pode se tornar vida para alguém?"},
+      {tema:"Comunidade", texto:"Você não veio ao mundo para florescer sozinho. É no pertencer, no servir e no sentir-se necessário que a existência encontra grande parte do seu sabor. Procure hoje a sua roda — e ocupe nela o seu lugar."},
+      {tema:"Corporeidade", texto:"Nem tudo o que dá sentido se explica em palavras. Há um saber que passa pelo corpo: no abraço, no ritmo, no trabalho das mãos, na presença. Hoje, honre aquilo que só se aprende vivendo."},
+      {tema:"Circularidade", texto:"O tempo não é uma linha reta que só avança: é roda que gira, estação que retorna. Todo fim guarda um recomeço. Se hoje é inverno, confie — a primavera também faz parte do ciclo."},
+      {tema:"Equilíbrio", texto:"A sabedoria antiga não divide o mundo em opostos que se excluem: ela busca a harmonia entre forças que se completam. Hoje, procure o ponto justo — entre o descanso e a ação, entre dar e receber."},
+      {tema:"Memória", texto:"Os que partiram não são ausência: são raiz. A lembrança de quem nos amou continua orientando, como voz serena que aconselha. Ouça hoje o que os seus mais velhos ensinaram — e que ainda vale."},
+      {tema:"Propósito", texto:"Ter um porquê torna suportável quase qualquer como. Quando a vida aperta, não pergunte só “por que isto comigo?”, mas “para quê?” — que bem posso extrair, a quem posso servir, o que isto me chama a ser."},
+      {tema:"Diante da dor", texto:"Há dores que não podemos evitar, mas há sempre um modo de atravessá-las. Mesmo sem poder mudar o que acontece, você ainda escolhe como responde — e nessa escolha mora a sua dignidade."},
+      {tema:"Gratidão", texto:"Tudo o que você é hoje teve mãos que o sustentaram: pais, mestres, amigos, antepassados. Reconhecê-lo é um ato de axé — a energia do bem que circula quando dizemos, de coração, obrigado."},
+      {tema:"Provérbio africano", texto:"“Sozinhos, vamos mais rápido; juntos, vamos mais longe.” O caminho do sentido raramente é solitário: ele se faz na companhia, no apoio mútuo, na travessia partilhada."},
+      {tema:"Axé", texto:"O que se dá não se perde: multiplica-se. A força vital cresce quando é partilhada e definha quando é só retida. Hoje, experimente doar um pouco do seu tempo, da sua escuta, da sua atenção."},
+      {tema:"Ancestralidade", texto:"Você é, ao mesmo tempo, fruto e semente. Herdeiro do que recebeu e responsável pelo que deixará. Viver bem é honrar essa dupla condição: agradecer o passado e cuidar do futuro."},
+      {tema:"Presença", texto:"Grande parte do que dá sentido não está no que fazemos, mas em como estamos presentes. Um olhar inteiro, uma escuta sem pressa, um estar junto de verdade — isso alimenta a alma de quem dá e de quem recebe."},
+      {tema:"Circularidade", texto:"Nada na natureza cresce o tempo todo: há o brotar, o florescer, o repousar. Respeitar os próprios ciclos — as horas de agir e as de recolher — é uma forma madura de sabedoria."},
+      {tema:"Comunidade", texto:"Ser necessário é uma das maiores fontes de alegria. Onde alguém precisa de você, ali há um chamado e um lugar. Pergunte-se hoje: de quem eu posso me fazer próximo?"},
+      {tema:"Trabalho", texto:"O trabalho feito com amor é axé em movimento: transforma o mundo e transforma quem o realiza. Não importa quão simples seja a tarefa — feita com sentido, ela dignifica."},
+      {tema:"Provérbio africano", texto:"“É preciso uma aldeia inteira para criar uma criança.” Ninguém se faz sozinho: somos tecidos pelos muitos que nos cercam. Reconhecer a própria aldeia é o começo da gratidão."},
+      {tema:"Esperança", texto:"Depois da noite mais escura, o sol sempre volta a nascer. Confiar nisso não é ingenuidade: é sabedoria de quem já viu o ciclo se cumprir muitas vezes. Todo recomeço é possível."},
+      {tema:"Equilíbrio", texto:"Cuidar de si e cuidar do outro não se opõem: sustentam-se. Uma fonte só mata a sede dos outros enquanto mantém a própria nascente. Hoje, cuide também de você."},
+      {tema:"Corporeidade", texto:"A dança, o canto, a festa não são fuga da vida séria — são modos de celebrá-la e de renovar as forças. Reserve hoje um instante para o corpo respirar, mover-se, alegrar-se."},
+      {tema:"Ancestralidade", texto:"Toda vez que você faz o bem, prolonga o melhor daqueles que vieram antes. Somos a continuação viva dos que nos ensinaram a amar. Honre-os hoje com um gesto de bondade."},
+      {tema:"Sentido no sofrer", texto:"Até a dor pode ganhar sentido quando se torna cuidado com o outro que também sofre. Quem transforma a própria ferida em compaixão descobre que nada do que viveu foi em vão."},
+      {tema:"Simplicidade", texto:"O sentido raramente está no extraordinário: mora no gesto simples de cada dia — o preparo do alimento, a palavra gentil, o dever cumprido com zelo. A vida grande é feita de coisas pequenas bem-feitas."},
+      {tema:"Comunidade", texto:"Perdoar e reconciliar é reparar o tecido da comunidade. Onde há mágoa, a rede se rompe; onde há perdão, ela se refaz. Existe hoje algum fio que você pode voltar a atar?"},
+      {tema:"Axé", texto:"A palavra tem força: pode adoecer ou curar, afundar ou levantar. Use hoje a sua para abençoar — um elogio sincero, um incentivo, um obrigado. Palavra boa também é axé."},
+      {tema:"Circularidade", texto:"O que você semeia, um dia colhe — se não você, os que vierem depois. Por isso vale plantar o bem mesmo sem ver o fruto: a roda do tempo é longa, mas é fiel."},
+      {tema:"Escuta", texto:"Os mais velhos guardam um saber que os livros não têm: o da vida vivida. Sentar-se para ouvi-los é receber uma herança viva. Quem em sua vida merece hoje a sua escuta atenta?"},
+      {tema:"Propósito", texto:"Não é a vida que deve responder ao que esperamos dela — somos nós que somos chamados a responder ao que ela nos pede. Cada dia traz uma pergunta; a sua resposta é a sua tarefa."},
+      {tema:"Serenidade", texto:"Há coisas que podemos mudar e outras que só podemos acolher. A paz nasce de saber distinguir umas das outras — agir com coragem no que depende de nós, e atravessar com dignidade o que não depende."},
+      {tema:"Pertencimento", texto:"Ter raízes e ter um lugar são necessidades da alma tanto quanto o pão é do corpo. Cultive os seus vínculos: eles são o solo onde a sua vida encontra firmeza e sentido."},
+      {tema:"Gratidão", texto:"Comece o dia contando o que tem, não o que falta. O olhar grato transforma o comum em dádiva e faz brotar sentido onde a pressa só via rotina. Pelo que você é grato agora?"},
+    ];
+
+    const el = (id) => document.getElementById(id);
+    const now = new Date();
+    el("data").textContent = now.toLocaleDateString("pt-BR", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+    const dayNum = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
+    const r = REFLEXOES[dayNum % REFLEXOES.length];
+    el("tema").textContent = r.tema;
+    el("texto").textContent = "“" + r.texto + "”";
+
+    el("criar").addEventListener("click", function () {
+      const [hh, mm] = (el("hora").value || "07:00").split(":");
+      const d = new Date(); d.setHours(+hh, +mm, 0, 0);
+      const p = (n) => String(n).padStart(2, "0");
+      const dt = d.getFullYear() + p(d.getMonth() + 1) + p(d.getDate()) + "T" + p(+hh) + p(+mm) + "00";
+      const ics = [
+        "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//luzeaxe//sentido//PT-BR","CALSCALE:GREGORIAN",
+        "BEGIN:VEVENT","UID:sentido-" + Date.now() + "@luzeaxe","DTSTAMP:" + dt,
+        "DTSTART:" + dt,"DURATION:PT10M","RRULE:FREQ=DAILY",
+        "SUMMARY:🌅 Sentido do Dia","DESCRIPTION:Sua reflexão diária.",
+        "BEGIN:VALARM","TRIGGER:PT0M","ACTION:DISPLAY","DESCRIPTION:Sentido do Dia","END:VALARM",
+        "END:VEVENT","END:VCALENDAR"
+      ].join("\r\n");
+      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob); a.download = "sentido-do-dia.ics";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    });
+
+    if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+    let deferred;
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault(); deferred = e;
+      el("instala").innerHTML = "<button class='btn gr' id='inst'>📲 Instalar como app</button>";
+      el("inst").addEventListener("click", async () => { deferred.prompt(); deferred = null; el("instala").textContent = ""; });
+    });
+  </script>
+</body>
+</html>

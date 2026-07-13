@@ -4,9 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Luz e Axé — Logoterapia e Tradições Afro-Brasileiras</title>
-  <meta name="description" content="A busca de sentido no diálogo entre a Logoterapia de Viktor Frankl e as tradições afro-brasileiras. Por Dr. Mimessi." />
+  <meta name="description" content="A sabedoria das tradições afro-brasileiras e a busca de sentido para a vida. Por Dr. Eduardo Mimessi." />
   <meta name="theme-color" content="#1c1108" />
   <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
@@ -39,6 +41,17 @@
     .cardlink.soon { opacity: .55; }
     .cardlink.soon .t::after { content: " · em breve"; font-family: "Crimson Pro", serif; font-size: 12px; color: #8fc9a8; letter-spacing: 0; }
 
+    .featured { display:block; text-decoration:none; color:inherit; margin-bottom:16px;
+      background:linear-gradient(135deg, rgba(232,184,102,.18), rgba(143,201,168,.08));
+      border:1px solid rgba(232,184,102,.5); border-radius:18px; padding:20px 22px;
+      box-shadow:0 0 24px rgba(232,184,102,.15); transition:all .16s; }
+    .featured:hover { border-color:rgba(232,184,102,.75); box-shadow:0 0 30px rgba(232,184,102,.24); }
+    .featured .fl { font-family:"Cinzel",serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#8fc9a8; }
+    .featured .ft { font-family:"Cinzel",serif; font-size:23px; color:#e8b866; margin-top:5px; }
+    .featured .fd { font-size:15px; color:#d8c8ab; margin-top:7px; line-height:1.5; }
+    .featured .fgo { display:inline-block; margin-top:13px; font-family:"Cinzel",serif; font-size:12px; letter-spacing:.5px;
+      color:#1c1108; background:#e8b866; padding:9px 16px; border-radius:10px; }
+
     .foot { text-align: center; margin-top: 30px; font-size: 12px; color: #8a7a63; line-height: 1.7; }
     .foot .frase { font-style: italic; color: #b8a689; font-size: 14px; margin-bottom: 10px; }
   </style>
@@ -61,7 +74,7 @@
       </svg>
       <div class="title">Luz e Axé</div>
       <div class="sub">Tradições Afro-Brasileiras · Sabedoria e Sentido</div>
-      <div class="author">Dr. Mimessi</div>
+      <div class="author">Dr. Eduardo Mimessi</div>
     </header>
 
     <div class="intro">
@@ -71,6 +84,13 @@
       <p>Cada tradição é abordada com profundo respeito por seus fundamentos, buscando na <em>ancestralidade</em>,
       no <em>axé</em> e no pertencer à <em>comunidade</em> as raízes de uma vida com propósito.</p>
     </div>
+
+    <a class="featured" href="devocional.html">
+      <div class="fl">☀ Todo dia um novo</div>
+      <div class="ft">Sentido do Dia</div>
+      <div class="fd">Uma reflexão diária para nutrir a alma — com lembrete no horário que você escolher e app para instalar no celular.</div>
+      <span class="fgo">Abrir a reflexão de hoje →</span>
+    </a>
 
     <div class="grid">
       <a class="cardlink" href="principios.html">
@@ -85,16 +105,13 @@
         <div class="t">Práticas e Exercícios</div>
         <div class="d">Rituais de conexão ancestral, mapeamento do axé pessoal, círculo de palavra, narrativas de sentido.</div>
       </a>
-      <a class="cardlink soon" href="#">
-        <div class="t">Sentido do Dia</div>
-        <div class="d">Uma reflexão diária — com lembrete e app instalável no celular.</div>
-      </a>
     </div>
 
     <p class="foot">
       <span class="frase">“Sozinhos vamos mais rápido; juntos, vamos mais longe.” — provérbio africano</span>
-      <br>Conteúdo de <em>Tradições Afro-Brasileiras</em>, Dr. Mimessi (2025).
+      <br>Conteúdo de <em>Tradições Afro-Brasileiras</em>, Dr. Eduardo Mimessi (2025).
     </p>
   </div>
+  <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}</script>
 </body>
 </html>
