@@ -1,8 +1,8 @@
 // Service worker — cache básico para instalar e abrir offline.
-const CACHE = "luzeaxe-v3";
+const CACHE = "luzeaxe-v4";
 const CORE = [
   "devocional.html", "index.html", "principios.html", "caminhos.html", "praticas.html",
-  "orixas.html", "vozes.html", "manifest.webmanifest"
+  "orixas.html", "vozes.html", "autor.html", "manifest.webmanifest"
 ];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()).catch(() => {}));
