@@ -1,0 +1,232 @@
+/* Luz e Axé — identidade visual "Raízes de Luz"
+ *
+ * Base índigo/azul profundo, dourado envelhecido, marfim para leitura e verde
+ * discreto como cor de vida. Linguagem abstrata: círculos, raízes e caminhos.
+ *
+ * Deliberadamente ausentes: fontes decorativas ditas "tribais", colagens
+ * genericamente africanas, símbolos sagrados usados como ornamento e qualquer
+ * representação de rituais ou de orixás.
+ */
+
+:root {
+  --indigo: #0e1730;
+  --indigo-2: #16203f;
+  --indigo-3: #1f2b50;
+  --ouro: #b2914f;
+  --ouro-claro: #d4b877;
+  --marfim: #f4efe3;
+  --verde: #5d7a5f;
+  --texto: #ece6d8;
+  --texto-suave: #b3b0a6;
+  --borda: rgba(178, 145, 79, 0.26);
+  --max: 1060px;
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+[data-tema='claro'] {
+  --indigo: #f4efe3;
+  --indigo-2: #ece5d5;
+  --indigo-3: #e0d7c3;
+  --texto: #101a33;
+  --texto-suave: #4a5266;
+  --ouro: #7e6224;
+  --ouro-claro: #96762f;
+  --borda: rgba(30, 44, 80, 0.2);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--indigo);
+  color: var(--texto);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-text-size-adjust: 100%;
+}
+
+.pular { position: absolute; left: -9999px; }
+.pular:focus {
+  left: 1rem; top: 1rem; z-index: 99;
+  background: var(--ouro); color: var(--indigo);
+  padding: .6rem 1rem; border-radius: 6px;
+}
+
+.envolt { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+/* ---------- marca: círculo com raiz, abstrato ---------- */
+
+.selo-marca { width: 40px; height: 40px; flex: none; display: block; }
+.selo-marca circle, .selo-marca path { fill: none; stroke: var(--ouro); stroke-width: 1.4; }
+.selo-marca .nucleo { fill: var(--ouro-claro); stroke: none; }
+
+/* ---------- cabeçalho ---------- */
+
+header.topo {
+  border-bottom: 1px solid var(--borda);
+  background: var(--indigo-2);
+  position: sticky; top: 0; z-index: 20;
+}
+.topo-linha {
+  display: flex; align-items: center; gap: 1rem;
+  justify-content: space-between; padding: .8rem 0; flex-wrap: wrap;
+}
+.marca { display: flex; align-items: center; gap: .7rem; text-decoration: none; color: inherit; }
+.marca b { display: block; font-size: 1.02rem; font-family: var(--serif); }
+.marca span span { display: block; font-size: .72rem; color: var(--texto-suave); letter-spacing: .08em; text-transform: uppercase; }
+
+nav.menu { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+nav.menu a {
+  color: var(--texto-suave); text-decoration: none; font-size: .89rem;
+  padding: .2rem 0; border-bottom: 1px solid transparent;
+}
+nav.menu a:hover, nav.menu a:focus { color: var(--ouro-claro); border-bottom-color: var(--ouro); }
+nav.menu a[aria-current='page'] { color: var(--ouro-claro); border-bottom-color: var(--ouro); }
+
+button.tema {
+  background: transparent; border: 1px solid var(--borda); color: var(--texto-suave);
+  border-radius: 999px; width: 34px; height: 34px; cursor: pointer; font-size: .95rem;
+}
+button.tema:hover { color: var(--ouro-claro); border-color: var(--ouro); }
+
+/* ---------- tarjas ---------- */
+
+.tarja {
+  background: var(--indigo-3); border-bottom: 1px solid var(--borda);
+  font-size: .83rem; color: var(--texto-suave); text-align: center; padding: .55rem 1rem;
+}
+.tarja strong { color: var(--ouro-claro); }
+
+.nota-cuidado {
+  border: 1px solid var(--verde);
+  border-left-width: 4px;
+  border-radius: 8px;
+  background: rgba(93, 122, 95, 0.09);
+  padding: 1rem 1.15rem;
+  margin: 2rem 0 0;
+  font-size: .9rem;
+}
+.nota-cuidado strong { color: var(--verde); display: block; margin-bottom: .3rem; }
+.nota-cuidado p { margin: 0; color: var(--texto-suave); }
+
+/* ---------- tipografia ---------- */
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.22; margin: 0 0 .6rem; }
+h1 { font-size: clamp(1.9rem, 4.6vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-top: 0; }
+h3 { font-size: 1.13rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--ouro-claro); }
+
+.olho {
+  font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ouro); margin-bottom: .5rem; display: block;
+}
+.sub { color: var(--texto-suave); max-width: 62ch; }
+
+section { padding: 3rem 0; border-top: 1px solid var(--borda); }
+section:first-of-type { border-top: 0; }
+
+/* ---------- hero com raízes abstratas ---------- */
+
+.hero {
+  padding: 4rem 0 3rem;
+  position: relative;
+  background-image:
+    radial-gradient(circle at 88% 12%, rgba(178,145,79,.12), transparent 42%),
+    radial-gradient(circle at 8% 88%, rgba(93,122,95,.10), transparent 45%);
+}
+.hero h1 em { color: var(--ouro-claro); font-style: italic; }
+
+.acoes { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.6rem; }
+.botao {
+  display: inline-block; padding: .72rem 1.3rem; border-radius: 999px;
+  text-decoration: none; font-size: .92rem; border: 1px solid var(--ouro); color: var(--ouro-claro);
+}
+.botao.cheio { background: var(--ouro); color: #0e1730; }
+.botao:hover { background: var(--ouro-claro); color: #0e1730; }
+
+/* ---------- grades e cartões ---------- */
+
+.grade { display: grid; gap: 1rem; }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+
+.cartao {
+  background: var(--indigo-2); border: 1px solid var(--borda);
+  border-radius: 12px; padding: 1.3rem;
+}
+.cartao h3 { color: var(--ouro-claro); }
+.cartao p:last-child { margin-bottom: 0; }
+.cartao .num { font-family: var(--serif); color: var(--ouro); font-size: .84rem; letter-spacing: .1em; }
+a.cartao { text-decoration: none; color: inherit; display: block; }
+a.cartao:hover { border-color: var(--ouro); }
+
+/* ---------- selos de gênero de texto ---------- */
+
+.selo-genero {
+  display: inline-block; font-size: .67rem; letter-spacing: .13em;
+  text-transform: uppercase; padding: .2rem .6rem; border-radius: 999px;
+  border: 1px solid var(--borda); color: var(--texto-suave); margin-bottom: .5rem;
+}
+.selo-genero.termo     { border-color: rgba(178,145,79,.65); color: var(--ouro-claro); }
+.selo-genero.sintese   { border-color: rgba(93,122,95,.75);  color: #8fae91; }
+.selo-genero.autoral   { border-color: rgba(150,165,215,.6); color: #a9b7e0; }
+.selo-genero.aplicacao { border-color: rgba(160,160,160,.45); color: var(--texto-suave); }
+.selo-genero.contexto  { border-color: rgba(178,145,79,.45); color: #c3a978; }
+.selo-genero.voz       { border-color: rgba(120,175,190,.7); color: #8dc0cf; }
+.selo-genero.saude     { border-color: rgba(93,122,95,.9);  color: #7fae82; }
+.selo-genero.alerta    { border-color: #b8663f; color: #d98b60; }
+
+/* ---------- devocional ---------- */
+
+.leitor { background: var(--indigo-2); border: 1px solid var(--borda); border-radius: 14px; padding: 1.6rem; }
+.leitor .termo-linha { font-family: var(--serif); font-size: 1.55rem; color: var(--ouro-claro); margin: 0 0 .2rem; }
+.leitor .traducao { color: var(--texto-suave); font-size: .92rem; margin-bottom: 1.2rem; }
+.bloco { padding: 1.1rem 0; border-top: 1px dashed var(--borda); }
+.bloco:first-of-type { border-top: 0; }
+.bloco h4 { margin: 0 0 .4rem; font-size: .95rem; color: var(--texto); font-family: var(--sans); }
+.bloco p { margin: 0; color: var(--texto-suave); }
+.origem { font-size: .79rem; color: var(--texto-suave); font-style: italic; }
+
+.navega { display: flex; gap: .7rem; justify-content: space-between; margin-top: 1.4rem; flex-wrap: wrap; }
+.navega button {
+  background: transparent; border: 1px solid var(--borda); color: var(--texto-suave);
+  border-radius: 999px; padding: .5rem 1.1rem; cursor: pointer; font-size: .87rem;
+}
+.navega button:hover { color: var(--ouro-claro); border-color: var(--ouro); }
+
+/* ---------- listas ---------- */
+
+ul.limpa { list-style: none; padding: 0; margin: 0; }
+ul.limpa li { padding: .85rem 0; border-top: 1px solid var(--borda); }
+ul.limpa li:first-child { border-top: 0; }
+
+dl.fontes { margin: 0; }
+dl.fontes dt { font-weight: 600; color: var(--texto); margin-top: 1rem; }
+dl.fontes dd { margin: .15rem 0 0; color: var(--texto-suave); font-size: .92rem; }
+
+/* ---------- páginas de estado ---------- */
+
+.estado { text-align: center; padding: 5rem 1.25rem; }
+.estado .selo-marca { margin: 0 auto 1.5rem; width: 64px; height: 64px; }
+
+/* ---------- rodapé ---------- */
+
+footer.rodape {
+  border-top: 1px solid var(--borda); background: var(--indigo-2);
+  padding: 2.5rem 0 3rem; font-size: .89rem; color: var(--texto-suave);
+}
+footer.rodape h4 {
+  color: var(--ouro-claro); font-size: .77rem; letter-spacing: .13em;
+  text-transform: uppercase; margin: 0 0 .7rem; font-family: var(--sans);
+}
+footer.rodape a { color: var(--texto-suave); text-decoration: none; display: block; padding: .2rem 0; }
+footer.rodape a:hover { color: var(--ouro-claro); }
+.rodape-grade { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); margin-bottom: 2rem; }
+.legal { border-top: 1px solid var(--borda); padding-top: 1.2rem; font-size: .81rem; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Meditação do dia — Luz e Axé</title>
-<meta name="description" content="Uma leitura por dia: termo da tradição com fonte, síntese educativa, reflexão autoral, diálogo existencial proposto pelo autor e uma aplicação para o dia.">
+<title>Sem conexão — Luz e Axé</title>
+<meta name="description" content="Esta página aparece quando não há conexão disponível.">
 <meta name="author" content="Dr. Eduardo D'Angelo Mimessi">
 <meta name="theme-color" content="#0e1730">
-<link rel="canonical" href="https://luzeaxe.com.br/devocional.html">
+<meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Luz e Axé">
-<meta property="og:title" content="Meditação do dia — Luz e Axé">
-<meta property="og:description" content="Uma leitura por dia: termo da tradição com fonte, síntese educativa, reflexão autoral, diálogo existencial proposto pelo autor e uma aplicação para o dia.">
+<meta property="og:title" content="Sem conexão — Luz e Axé">
+<meta property="og:description" content="Esta página aparece quando não há conexão disponível.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
@@ -35,7 +35,7 @@
     </a>
     <nav class="menu" aria-label="Principal">
         <a href="index.html">Início</a>
-        <a href="devocional.html" aria-current="page">Meditação do dia</a>
+        <a href="devocional.html">Meditação do dia</a>
         <a href="principios.html">Princípios</a>
         <a href="tradicoes.html">Tradições</a>
         <a href="orixas.html">Cosmologia</a>
@@ -50,23 +50,19 @@
 
 <main id="conteudo">
 
-  <div class="envolt hero" style="padding-bottom:1.5rem">
-    <span class="olho">Meditação do dia</span>
-    <h1>Uma leitura por dia</h1>
-    <p class="sub">Cada leitura segue sempre a mesma ordem: termo da tradição com língua de origem, contexto com a obra que o sustenta, reflexão do autor, diálogo existencial proposto pelo autor e uma pergunta aberta. Os selos deixam explícito onde termina a tradição e começa a interpretação.</p>
-    <p class="sub">Não há exercício a cumprir nem resposta esperada. Uma leitura por dia, e o que ela mover é assunto de quem lê.</p>
-    <p class="origem" style="margin-top:1rem">Ciclo previsto: 366 leituras. Publicadas: 30. Todas são <strong>reflexões autorais</strong> a partir das obras listadas em Fontes.</p>
-    <p id="aviso-ciclo" class="nota-cuidado" hidden><strong>Acervo em construção.</strong> Enquanto as 366 leituras não estiverem escritas e revisadas, a seleção diária percorre o acervo preliminar e pode reaparecer. Ela não é apresentada como calendário anual completo.</p>
-  </div>
-
-  <section class="envolt" style="border-top:0;padding-top:0">
-    <div class="leitor" id="leitor"><p>Carregando a leitura de hoje…</p></div>
-    <div class="navega">
-      <button type="button" id="anterior">← Anterior</button>
-      <button type="button" id="hoje">Hoje <span id="posicao"></span></button>
-      <button type="button" id="proxima">Próxima →</button>
+  <div class="envolt estado">
+    <svg class="selo-marca" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <circle cx="24" cy="20" r="13"/><circle cx="24" cy="20" r="7.5"/>
+  <circle class="nucleo" cx="24" cy="20" r="2.6"/>
+  <path d="M24 33 V42 M24 37 C20 38 18 40 17 43 M24 37 C28 38 30 40 31 43"/>
+</svg>
+    <h1>Sem conexão</h1>
+    <p class="sub" style="margin:0 auto">Você está sem acesso à internet no momento. As páginas já visitadas continuam disponíveis; as demais voltam assim que a conexão retornar.</p>
+    <div class="acoes" style="justify-content:center">
+      <a class="botao cheio" href="index.html">Voltar ao início</a>
+      <a class="botao" href="devocional.html">Meditação do dia</a>
     </div>
-  </section>
+  </div>
 
   <div class="envolt" style="padding-bottom:3rem">
     <div class="nota-cuidado">
@@ -107,7 +103,6 @@
   </div>
 </footer>
 <script src="assets/js/app.js"></script>
-<script src="assets/data/reflexoes.js"></script>
-<script src="assets/js/devocional.js"></script>
+
 </body>
 </html>

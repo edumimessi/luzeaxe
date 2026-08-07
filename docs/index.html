@@ -1,125 +1,159 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="escuro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Luz e Axé — Logoterapia e Tradições Afro-Brasileiras</title>
-  <meta name="description" content="A sabedoria das tradições afro-brasileiras e a busca de sentido para a vida. Por Dr. Eduardo Mimessi." />
-  <meta name="theme-color" content="#1c1108" />
-  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { min-height: 100%; }
-    body { min-height: 100vh; padding: max(34px, env(safe-area-inset-top)) 20px 56px; font-family: "Crimson Pro", Georgia, serif; color: #f0e6d8;
-      background: radial-gradient(ellipse at 50% 0%, #3a2416 0%, #1c1108 55%, #0c0602 100%); background-attachment: fixed; }
-    .rays { position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: .5;
-      background: radial-gradient(circle at 50% -10%, rgba(232,184,102,.18), transparent 45%); }
-    .wrap { position: relative; z-index: 1; width: 100%; max-width: 640px; margin: 0 auto; }
-    header { text-align: center; margin-bottom: 30px; }
-    .sun { width: 62px; height: 62px; margin: 0 auto 12px; display: block; filter: drop-shadow(0 0 16px rgba(232,184,102,.5)); }
-    .title { font-family: "Cinzel", serif; font-size: 34px; font-weight: 700; letter-spacing: 2px; color: #e8b866; }
-    .sub { font-family: "Cinzel", serif; font-size: 11.5px; letter-spacing: 2.5px; text-transform: uppercase; color: #8fc9a8; margin-top: 8px; }
-    .author { font-size: 14px; color: #b8a689; margin-top: 8px; font-style: italic; }
-
-    .intro { background: rgba(255,255,255,.035); border: 1px solid rgba(232,184,102,.16); border-radius: 18px;
-      padding: 20px 22px; margin-bottom: 24px; font-size: 16px; line-height: 1.68; color: #ece1cf; }
-    .intro p { margin-bottom: 12px; }
-    .intro p:last-child { margin-bottom: 0; }
-    .intro em { color: #e8c98a; }
-
-    .grid { display: grid; gap: 13px; }
-    .cardlink { display: block; text-decoration: none; color: inherit; background: rgba(255,255,255,.04);
-      border: 1px solid rgba(255,255,255,.10); border-radius: 16px; padding: 18px 20px; transition: all .16s; }
-    .cardlink:hover { background: rgba(232,184,102,.08); border-color: rgba(232,184,102,.35); }
-    .cardlink .t { font-family: "Cinzel", serif; font-size: 18px; color: #e8b866; }
-    .cardlink .d { font-size: 14.5px; color: #c3b39a; margin-top: 4px; line-height: 1.5; }
-    .cardlink.soon { opacity: .55; }
-    .cardlink.soon .t::after { content: " · em breve"; font-family: "Crimson Pro", serif; font-size: 12px; color: #8fc9a8; letter-spacing: 0; }
-
-    .featured { display:block; text-decoration:none; color:inherit; margin-bottom:16px;
-      background:linear-gradient(135deg, rgba(232,184,102,.18), rgba(143,201,168,.08));
-      border:1px solid rgba(232,184,102,.5); border-radius:18px; padding:20px 22px;
-      box-shadow:0 0 24px rgba(232,184,102,.15); transition:all .16s; }
-    .featured:hover { border-color:rgba(232,184,102,.75); box-shadow:0 0 30px rgba(232,184,102,.24); }
-    .featured .fl { font-family:"Cinzel",serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#8fc9a8; }
-    .featured .ft { font-family:"Cinzel",serif; font-size:23px; color:#e8b866; margin-top:5px; }
-    .featured .fd { font-size:15px; color:#d8c8ab; margin-top:7px; line-height:1.5; }
-    .featured .fgo { display:inline-block; margin-top:13px; font-family:"Cinzel",serif; font-size:12px; letter-spacing:.5px;
-      color:#1c1108; background:#e8b866; padding:9px 16px; border-radius:10px; }
-
-    .foot { text-align: center; margin-top: 30px; font-size: 12px; color: #8f7f68; line-height: 1.7; }
-    .foot .frase { font-style: italic; color: #b8a689; font-size: 14px; margin-bottom: 10px; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luz e Axé — Matriz iorubá e tradições afro-brasileiras</title>
+<meta name="description" content="Ancestralidade, axé, comunidade, corporeidade e circularidade a partir da matriz iorubá do Candomblé Ketu, com fontes nomeadas e distinção explícita entre tradição e reflexão autoral.">
+<meta name="author" content="Dr. Eduardo D'Angelo Mimessi">
+<meta name="theme-color" content="#0e1730">
+<link rel="canonical" href="https://luzeaxe.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Luz e Axé">
+<meta property="og:title" content="Luz e Axé — Matriz iorubá e tradições afro-brasileiras">
+<meta property="og:description" content="Ancestralidade, axé, comunidade, corporeidade e circularidade a partir da matriz iorubá do Candomblé Ketu, com fontes nomeadas e distinção explícita entre tradição e reflexão autoral.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <div class="rays"></div>
-  <div class="wrap">
-    <header>
-      <svg class="sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g fill="none" stroke="#e8b866" stroke-width="3" stroke-linecap="round">
-          <circle cx="50" cy="50" r="15" fill="#e8b866" stroke="none"/>
-          <circle cx="50" cy="50" r="24" opacity=".8"/>
-          <g opacity=".9">
-            <line x1="50" y1="6" x2="50" y2="16"/><line x1="50" y1="84" x2="50" y2="94"/>
-            <line x1="6" y1="50" x2="16" y2="50"/><line x1="84" y1="50" x2="94" y2="50"/>
-            <line x1="19" y1="19" x2="26" y2="26"/><line x1="74" y1="74" x2="81" y2="81"/>
-            <line x1="81" y1="19" x2="74" y2="26"/><line x1="26" y1="74" x2="19" y2="81"/>
-          </g>
-        </g>
-      </svg>
-      <div class="title">Luz e Axé</div>
-      <div class="sub">Tradições Afro-Brasileiras · Sabedoria e Sentido</div>
-      <div class="author">Dr. Eduardo Mimessi</div>
-    </header>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
 
-    <div class="intro">
-      <p>Este espaço nasce de uma busca antiga: entender como a <em>espiritualidade</em> nos ajuda a encontrar
-      um <em>sentido</em> para a vida. Aqui, a sabedoria das <em>tradições afro-brasileiras</em> — a ancestralidade,
-      o axé, a comunidade — ilumina o caminho de quem procura um porquê para viver.</p>
-      <p>Cada tradição é abordada com profundo respeito por seus fundamentos, buscando na <em>ancestralidade</em>,
-      no <em>axé</em> e no pertencer à <em>comunidade</em> as raízes de uma vida com propósito.</p>
-    </div>
+<div class="tarja">
+  <strong>Versão preliminar em revisão.</strong> Site educativo, não iniciático. Não substitui terreiro, comunidade ou orientação religiosa, nem assistência médica ou psicológica.
+</div>
 
-    <a class="featured" href="devocional.html">
-      <div class="fl">☀ Todo dia um novo</div>
-      <div class="ft">Sentido do Dia</div>
-      <div class="fd">Uma reflexão diária para nutrir a alma — com lembrete no horário que você escolher e app para instalar no celular.</div>
-      <span class="fgo">Abrir a reflexão de hoje →</span>
+<header class="topo">
+  <div class="envolt topo-linha">
+    <a class="marca" href="index.html">
+      <svg class="selo-marca" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <circle cx="24" cy="20" r="13"/><circle cx="24" cy="20" r="7.5"/>
+  <circle class="nucleo" cx="24" cy="20" r="2.6"/>
+  <path d="M24 33 V42 M24 37 C20 38 18 40 17 43 M24 37 C28 38 30 40 31 43"/>
+</svg>
+      <span><b>Luz e Axé</b><span>Matriz iorubá e tradições afro-brasileiras</span></span>
     </a>
-
-    <div class="grid">
-      <a class="cardlink" href="principios.html">
-        <div class="t">Os Cinco Princípios</div>
-        <div class="d">Ancestralidade, Axé, Comunidade (Egbé), Corporeidade e Circularidade — e seu encontro com a busca de sentido.</div>
-      </a>
-      <a class="cardlink" href="orixas.html">
-        <div class="t">Olodumare e os Orixás</div>
-        <div class="d">Orun e Aiyê, os Orixás, o Ori e o destino pessoal, a ancestralidade e o terreiro como família.</div>
-      </a>
-      <a class="cardlink" href="vozes.html">
-        <div class="t">Vozes e Desafios</div>
-        <div class="d">Abdias do Nascimento, Lélia Gonzalez, Beatriz Nascimento e Muniz Sodré — e o racismo religioso que os terreiros enfrentam.</div>
-      </a>
-      <a class="cardlink" href="caminhos.html">
-        <div class="t">Caminhos de Sentido</div>
-        <div class="d">Reflexões sobre propósito, valores e a arte de encontrar significado — inclusive diante do sofrimento.</div>
-      </a>
-      <a class="cardlink" href="praticas.html">
-        <div class="t">Práticas e Exercícios</div>
-        <div class="d">Um caderno de dez semanas de meditação e reflexão — axé, ancestralidade, comunidade, equilíbrio e celebração.</div>
-      </a>
-    </div>
-
-    <p class="foot">
-      <span class="frase">“Sozinhos vamos mais rápido; juntos, vamos mais longe.” — provérbio africano</span>
-      <br>Conteúdo de <em>Tradições Afro-Brasileiras</em>, <a href="autor.html">Dr. Eduardo Mimessi</a> (2025).
-    </p>
+    <nav class="menu" aria-label="Principal">
+        <a href="index.html" aria-current="page">Início</a>
+        <a href="devocional.html">Meditação do dia</a>
+        <a href="principios.html">Princípios</a>
+        <a href="tradicoes.html">Tradições</a>
+        <a href="orixas.html">Cosmologia</a>
+        <a href="conceitos.html">Conceitos</a>
+        <a href="vozes.html">Vozes</a>
+        <a href="metodo-editorial.html">Método</a>
+        <a href="fontes.html">Fontes</a>
+      <button class="tema" type="button" aria-label="Alternar tema">◐</button>
+    </nav>
   </div>
-  <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}</script>
+</header>
+
+<main id="conteudo">
+
+  <div class="envolt hero">
+    <h1>Ancestralidade, axé e <em>sentido</em></h1>
+    <p class="sub">Um espaço em português sobre as tradições afro-brasileiras e a busca de sentido. Cada bloco de texto diz de qual tradição fala, qual obra o sustenta e se é síntese educativa ou reflexão do autor — para que interpretação nunca seja confundida com doutrina.</p>
+    <div class="acoes">
+      <a class="botao cheio" href="devocional.html">Ler a meditação de hoje</a>
+      <a class="botao" href="metodo-editorial.html">Como este site é escrito</a>
+    </div>
+  </div>
+
+  <section class="envolt">
+    <span class="olho">Antes de tudo</span>
+    <h2>O recorte deste site</h2>
+    <p class="sub">O conteúdo publicado aqui concentra-se na matriz iorubá do Candomblé Ketu/Nagô, com referências pontuais ao vocabulário bantu do Candomblé Angola e menções à Umbanda. Esse é o recorte real, e declará-lo é mais honesto do que sugerir cobertura de todas as tradições afro-brasileiras.</p>
+    <p class="sub">Umbanda, Jurema, Tambor de Mina, Xangô do Nordeste, Batuque e Candomblé Jeje aparecem na página Tradições para que o leitor saiba que existem e que são distintos — não porque este site trate cada um com profundidade. Nenhuma delas deve ser lida a partir do que se afirma sobre o Ketu.</p>
+    <p class="sub">Onde o texto fala de "tradições afro-brasileiras" no plural, trata-se de um traço que a literatura registra em mais de uma matriz. Onde a formulação é específica, o campo de matriz indica de qual tradição se fala.</p>
+    <p style="margin-top:1rem"><a href="tradicoes.html">Ver quais tradições existem e como se distinguem →</a></p>
+  </section>
+
+  <section class="envolt">
+    <span class="olho">Os cinco princípios</span>
+    <h2>Cinco fios de leitura</h2>
+    <p class="sub">Síntese educativa introdutória. Formulações variam entre nações e casas; nenhuma delas é doutrina apresentada por este site.</p>
+    <div class="grade g3" style="margin-top:1.6rem">
+      <article class="cartao">
+        <span class="num">01</span>
+        <h3>Ancestralidade</h3>
+        <p>Ninguém começa do zero. Existir é receber e responder ao que veio antes.</p>
+      </article>
+      <article class="cartao">
+        <span class="num">02</span>
+        <h3>Axé</h3>
+        <p>A força que faz acontecer — e que precisa circular para não se esgotar.</p>
+      </article>
+      <article class="cartao">
+        <span class="num">03</span>
+        <h3>Comunidade (Egbé)</h3>
+        <p>A pessoa se realiza dentro de um corpo coletivo, não apesar dele.</p>
+      </article>
+      <article class="cartao">
+        <span class="num">04</span>
+        <h3>Corporeidade</h3>
+        <p>O corpo não é obstáculo ao espírito. É onde a vida acontece.</p>
+      </article>
+      <article class="cartao">
+        <span class="num">05</span>
+        <h3>Circularidade</h3>
+        <p>O tempo não é uma linha que abandona: é um ciclo que retorna e ensina.</p>
+      </article>
+    </div>
+    <p style="margin-top:1.4rem"><a href="principios.html">Ler cada princípio em detalhe →</a></p>
+  </section>
+
+  <section class="envolt">
+    <span class="olho">Compromisso</span>
+    <h2>O que este site não faz</h2>
+    <div class="grade g2" style="margin-top:1.4rem">
+      <article class="cartao"><h3>Não é iniciático</h3><p>Fundamento, segredo, feitura e liturgia interna não são tratados aqui — nem deveriam ser, por quem não é iniciado.</p></article>
+      <article class="cartao"><h3>Não prescreve nada</h3><p>Não há exercícios, tarefas nem instrução ritual. As leituras terminam em proposições e perguntas abertas, que cada pessoa responde como quiser — ou não responde.</p></article>
+      <article class="cartao"><h3>Não trata nem cura</h3><p>Nada aqui é terapia. Água, plantas, música e natureza aparecem como experiência cultural, jamais como recurso clínico.</p></article>
+      <article class="cartao"><h3>Não lê sofrimento como sinal</h3><p>Adoecimento e perda não são interpretados como castigo, desequilíbrio espiritual ou afastamento do próprio destino.</p></article>
+      <article class="cartao"><h3>Não funde tradições</h3><p>Semelhanças são apontadas como semelhanças. Nada de "é tudo a mesma coisa".</p></article>
+      <article class="cartao"><h3>Não cita sem fonte</h3><p>Sem "provérbio africano" genérico. Cada síntese indica a obra que a sustenta.</p></article>
+    </div>
+  </section>
+
+  <div class="envolt" style="padding-bottom:3rem">
+    <div class="nota-cuidado">
+      <strong>Nota de cuidado</strong>
+      <p>Práticas espirituais e comunitárias podem oferecer pertencimento, consolo e significado. Elas não substituem avaliação médica ou psicológica quando há sofrimento persistente, prejuízo funcional, risco, sintomas físicos importantes ou emergência. O cuidado pode ser construído de modo respeitoso e complementar, com consentimento da pessoa.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="envolt">
+    <div class="rodape-grade">
+      <div>
+        <h4>Percorrer</h4>
+        <a href="devocional.html">Meditação do dia</a>
+        <a href="principios.html">Os cinco princípios</a>
+        <a href="tradicoes.html">Tradições</a>
+        <a href="orixas.html">Cosmologia</a>
+      </div>
+      <div>
+        <h4>Compromisso</h4>
+        <a href="metodo-editorial.html">Método editorial</a>
+        <a href="fontes.html">Fontes e créditos</a>
+        <a href="vozes.html">Vozes e racismo religioso</a>
+        <a href="autor.html">Sobre o autor</a>
+      </div>
+      <div>
+        <h4>Projeto</h4>
+        <a href="https://vidaesentido.com.br" rel="noopener">Projeto Vida e Sentido</a>
+        <a href="https://github.com/edumimessi/luzeaxe" rel="noopener">Código no GitHub</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Site educativo. Apresenta conceitos publicados em literatura acadêmica e em obras de autoria de pessoas das próprias tradições. Não transmite fundamento, segredo iniciático ou liturgia, e não substitui terreiro, comunidade ou orientação de lideranças religiosas.</p>
+      <p>Práticas espirituais e comunitárias não substituem avaliação médica ou psicológica.</p>
+      <p>© <span id="ano">2026</span> Dr. Eduardo D'Angelo Mimessi. Concebido e curado editorialmente pelo autor, desenvolvido com apoio de ferramentas digitais.</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/app.js"></script>
+
 </body>
 </html>
