@@ -1,145 +1,151 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-tema="escuro">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Vozes e Desafios — Luz e Axé</title>
-  <meta name="description" content="Abdias do Nascimento, Lélia Gonzalez, Beatriz Nascimento e Muniz Sodré — e os desafios que as religiões de matriz africana enfrentam hoje." />
-  <meta name="theme-color" content="#1c1108" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    html,body { min-height:100%; }
-    body { min-height:100vh; padding:32px 20px 56px; font-family:"Crimson Pro",Georgia,serif; color:#f0e6d8;
-      background:radial-gradient(ellipse at 50% 0%, #3a2416 0%, #1c1108 55%, #0c0602 100%); background-attachment:fixed; }
-    .rays { position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.5;
-      background:radial-gradient(circle at 50% -10%, rgba(232,184,102,.16), transparent 45%); }
-    .wrap { position:relative; z-index:1; width:100%; max-width:640px; margin:0 auto; }
-    header { text-align:center; margin-bottom:24px; }
-    .kicker { font-family:"Cinzel",serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:#8fc9a8; }
-    .h1 { font-family:"Cinzel",serif; font-size:25px; color:#e8b866; margin-top:6px; line-height:1.25; }
-    .lead { font-size:15px; color:#c3b39a; margin-top:8px; line-height:1.55; }
-    .backlink { display:inline-block; margin-top:14px; font-size:13px; color:#e8b866; text-decoration:none;
-      border:1px solid rgba(232,184,102,.35); padding:7px 14px; border-radius:10px; }
-    .backlink:hover { background:rgba(232,184,102,.12); }
-    .secao { font-family:"Cinzel",serif; font-size:13px; letter-spacing:2.5px; text-transform:uppercase; color:#8fc9a8;
-      margin:26px 0 12px; text-align:center; }
-    .p { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.10); border-radius:18px;
-      padding:18px 20px; margin-bottom:14px; overflow:hidden; }
-    .p > summary { cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; gap:10px; }
-    .p > summary::-webkit-details-marker { display:none; }
-    .pn { font-family:"Cinzel",serif; font-size:19px; color:#e8b866; }
-    .ps { font-size:13px; color:#8fc9a8; margin-top:2px; }
-    .chev { color:#e8b866; transition:transform .2s; font-size:14px; }
-    .p[open] > summary .chev { transform:rotate(90deg); }
-    .body { margin-top:14px; }
-    .body p { font-size:16.5px; line-height:1.72; color:#ece1cf; margin-bottom:13px; text-align:justify; }
-    .body p:last-child { margin-bottom:0; }
-    .body em { color:#e8c98a; }
-    .body strong { color:#e8c98a; font-weight:600; }
-    .grave { background:rgba(232,184,102,.07); border:1px solid rgba(232,184,102,.3); }
-    .nota { background:rgba(143,201,168,.07); border:1px solid rgba(143,201,168,.28); border-radius:16px;
-      padding:16px 18px; margin-bottom:20px; font-size:14.5px; line-height:1.65; color:#d6e6dc; }
-    .nota b { color:#8fc9a8; font-family:"Cinzel",serif; font-size:12.5px; letter-spacing:1.5px; text-transform:uppercase; display:block; margin-bottom:6px; }
-    .foot { text-align:center; margin-top:22px; font-size:12px; color:#8f7f68; line-height:1.6; }
-    .foot a { color:#e8b866; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vozes e racismo religioso — Luz e Axé</title>
+<meta name="description" content="Pensamento negro brasileiro sobre as tradições de matriz africana e a história da perseguição religiosa no Brasil.">
+<meta name="author" content="Dr. Eduardo D'Angelo Mimessi">
+<meta name="theme-color" content="#0e1730">
+<link rel="canonical" href="https://luzeaxe.com.br/vozes.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Luz e Axé">
+<meta property="og:title" content="Vozes e racismo religioso — Luz e Axé">
+<meta property="og:description" content="Pensamento negro brasileiro sobre as tradições de matriz africana e a história da perseguição religiosa no Brasil.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <div class="rays"></div>
-  <div class="wrap">
-    <header>
-      <div class="kicker">Pensamento e realidade</div>
-      <div class="h1">Vozes e Desafios</div>
-      <p class="lead">Quem pensou essas tradições a partir de dentro — e o que elas enfrentam hoje no Brasil.</p>
-      <a class="backlink" href="index.html">← Início</a>
-    </header>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
 
-    <div class="nota">
-      <b>Por que esta página existe</b>
-      Falar de axé e ancestralidade sem falar do que essas comunidades sofrem seria contar meia história. Esta página reúne pensadores que dedicaram a vida a essa reflexão e nomeia, sem rodeios, os desafios que os terreiros enfrentam.
-    </div>
+<div class="tarja">
+  <strong>Versão preliminar em revisão.</strong> Site educativo, não iniciático. Não substitui terreiro, comunidade ou orientação religiosa, nem assistência médica ou psicológica.
+</div>
 
-    <div class="secao">Quatro pensadores</div>
-
-    <details class="p" open>
-      <summary><div><div class="pn">Abdias do Nascimento</div><div class="ps">1914–2011 · o quilombismo</div></div><span class="chev">▶</span></summary>
-      <div class="body">
-        <p>Artista, político e intelectual, foi uma das vozes mais decisivas contra o racismo no Brasil. Denunciou o <strong>mito da democracia racial</strong> — a ideia confortável de que aqui conviveríamos harmonicamente, que servia para calar quem apontava a desigualdade.</p>
-        <p>Propôs o <strong>quilombismo</strong>: um modelo de sociedade fundado nos valores de cooperação e resistência dos quilombos históricos. Seu Teatro Experimental do Negro tornou-se marco na afirmação da cultura e da identidade negras.</p>
-        <p>Sua vida mostra algo simples e exigente: dedicar-se a uma causa maior do que si mesmo é um modo de encontrar sentido — e às vezes o único disponível a quem enfrenta a injustiça.</p>
-      </div>
-    </details>
-
-    <details class="p">
-      <summary><div><div class="pn">Lélia Gonzalez</div><div class="ps">1935–1994 · amefricanidade</div></div><span class="chev">▶</span></summary>
-      <div class="body">
-        <p>Filósofa e antropóloga, pioneira do feminismo negro brasileiro. Articulou raça, gênero e classe de forma original, mostrando que essas dimensões não se somam: se atravessam.</p>
-        <p>Criou o conceito de <strong>amefricanidade</strong> para nomear a profunda presença africana na formação cultural do continente americano — não como herança do passado, mas como matriz viva do que somos.</p>
-      </div>
-    </details>
-
-    <details class="p">
-      <summary><div><div class="pn">Beatriz Nascimento</div><div class="ps">1942–1995 · o quilombo como símbolo</div></div><span class="chev">▶</span></summary>
-      <div class="body">
-        <p>Historiadora e poeta, redefiniu o quilombo: não apenas lugar histórico, mas <strong>espaço simbólico de liberdade e identidade</strong> — algo que se pode reconstruir onde quer que haja gente reunida em torno da própria dignidade.</p>
-        <p>Sua obra, de rara sensibilidade poética, explorou as ligações entre corpo, território e ancestralidade.</p>
-      </div>
-    </details>
-
-    <details class="p">
-      <summary><div><div class="pn">Muniz Sodré</div><div class="ps">1942 · o saber de corpo</div></div><span class="chev">▶</span></summary>
-      <div class="body">
-        <p>Sociólogo e professor, é um dos mais importantes intelectuais vivos a pensar a cultura afro-brasileira. Formulou a noção de <strong>saber de corpo</strong>: um conhecimento que não é puramente intelectual, que se inscreve nos gestos, nas práticas e nos ritos.</p>
-        <p>É uma chave para entender por que, nessas tradições, dançar e cozinhar podem ser formas de saber tão legítimas quanto ler.</p>
-      </div>
-    </details>
-
-    <div class="secao">O que se enfrenta hoje</div>
-
-    <details class="p grave" open>
-      <summary><div><div class="pn">Racismo religioso</div><div class="ps">O desafio mais grave</div></div><span class="chev">▶</span></summary>
-      <div class="body">
-        <p>Terreiros são invadidos e depredados. Praticantes são agredidos com palavras e com as mãos. Orixás são publicamente chamados de demônios. Isso acontece hoje, no Brasil, com regularidade documentada — e atinge sobretudo comunidades pobres e negras.</p>
-        <p>A violência tem vindo em boa medida de <strong>grupos neopentecostais específicos</strong>, o que não se confunde com o conjunto das igrejas evangélicas nem autoriza generalização em sentido contrário: intolerância se combate nomeando quem a pratica, não atribuindo-a a todos.</p>
-        <p>Chamar isso de racismo religioso, e não apenas de intolerância, é reconhecer o que está em jogo: a continuação de um projeto antigo de apagar a espiritualidade africana — a destruição não só de templos, mas de um modo inteiro de conhecer o mundo.</p>
-        <p>E há um testemunho nisso que merece ser dito: comunidades que seguem se reunindo, cantando e cuidando dos seus depois de terem o barracão destruído demonstram uma firmeza de espírito que nenhuma teoria explica bem.</p>
-      </div>
-    </details>
-
-    <details class="p">
-      <summary><div><div class="pn">Apropriação cultural</div><div class="ps">Perseguidas e, ao mesmo tempo, copiadas</div></div><span class="chev">▶</span></summary>
-      <div class="body">
-        <p>Há um paradoxo cruel. Enquanto são perseguidas, essas religiões também têm sua estética, sua música e seu vocabulário retirados de contexto, esvaziados do que significam e transformados em produto ou modismo — sem respeito e sem retorno às comunidades que os criaram.</p>
-        <p>A diferença entre conhecer e apropriar-se está em três coisas: reconhecer a origem, não tratar como enfeite aquilo que é sagrado, e não lucrar às custas de quem foi perseguido por manter viva a mesma prática.</p>
-        <p>Esta é também uma advertência a páginas como esta. Apresentar com respeito exige dizer de onde se fala, não inventar autoridade que não se tem, e apontar sempre para a fonte viva: as próprias comunidades.</p>
-      </div>
-    </details>
-
-    <details class="p">
-      <summary><div><div class="pn">Dessincretização</div><div class="ps">Um debate interno, sem resposta única</div></div><span class="chev">▶</span></summary>
-      <div class="body">
-        <p>Dentro das próprias comunidades discute-se o sincretismo — a associação histórica entre Orixás e santos católicos, nascida em contexto de perseguição, quando cultuar abertamente era perigoso.</p>
-        <p>Movimentos de <strong>dessincretização</strong> ou reafricanização defendem retirar os elementos católicos e reaproximar-se das raízes africanas, entendendo isso como afirmação necessária de identidade.</p>
-        <p>Outras vozes defendem o sincretismo como parte legítima e criativa da história dessas religiões no Brasil — não uma máscara a ser removida, mas algo que de fato se tornou seu.</p>
-        <p>O debate segue aberto, e não cabe a quem observa de fora arbitrá-lo. Registrá-lo como divergência viva é mais honesto do que apresentar qualquer um dos lados como a posição correta.</p>
-      </div>
-    </details>
-
-    <div class="nota">
-      <b>De onde este texto fala</b>
-      Este site é escrito por alguém que não é iniciado nessas tradições e não fala em nome delas. É um gesto de aproximação respeitosa, não de autoridade religiosa. Quem quiser conhecer de verdade encontrará nas casas de santo, e nas obras dos autores citados aqui, aquilo que nenhuma página pode oferecer.
-    </div>
-
-    <p class="foot">
-      Continue em <a href="orixas.html">Olodumare e os Orixás</a> · <a href="principios.html">Os Cinco Princípios</a><br>
-      Conteúdo de <em>Tradições Afro-Brasileiras</em>, <a href="autor.html">Dr. Eduardo Mimessi</a> (2025).
-    </p>
+<header class="topo">
+  <div class="envolt topo-linha">
+    <a class="marca" href="index.html">
+      <svg class="selo-marca" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+  <circle cx="24" cy="20" r="13"/><circle cx="24" cy="20" r="7.5"/>
+  <circle class="nucleo" cx="24" cy="20" r="2.6"/>
+  <path d="M24 33 V42 M24 37 C20 38 18 40 17 43 M24 37 C28 38 30 40 31 43"/>
+</svg>
+      <span><b>Luz e Axé</b><span>Matriz iorubá e tradições afro-brasileiras</span></span>
+    </a>
+    <nav class="menu" aria-label="Principal">
+        <a href="index.html">Início</a>
+        <a href="devocional.html">Meditação do dia</a>
+        <a href="principios.html">Princípios</a>
+        <a href="tradicoes.html">Tradições</a>
+        <a href="orixas.html">Cosmologia</a>
+        <a href="conceitos.html">Conceitos</a>
+        <a href="vozes.html" aria-current="page">Vozes</a>
+        <a href="metodo-editorial.html">Método</a>
+        <a href="fontes.html">Fontes</a>
+      <button class="tema" type="button" aria-label="Alternar tema">◐</button>
+    </nav>
   </div>
-  <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}</script>
+</header>
+
+<main id="conteudo">
+
+  <div class="envolt hero" style="padding-bottom:1.5rem">
+    <span class="olho">Quem pensou isso antes</span>
+    <h1>Vozes</h1>
+    <p class="sub">Este site não fala em nome das tradições. Quem fala com autoridade sobre elas está abaixo — pesquisadoras, pensadores e lideranças religiosas que escreveram em nome próprio.</p>
+  </div>
+  <section class="envolt" style="border-top:0;padding-top:0">
+    <ul class="limpa">
+      <li>
+        <h3>Abdias do Nascimento <span class="origem">1914–2011</span></h3>
+        <p>Dramaturgo, artista e político. Formulou a crítica ao mito da democracia racial e defendeu as religiões afro-brasileiras como patrimônio civilizatório, não folclore.</p>
+        <p class="origem">Obra de referência: O Genocídio do Negro Brasileiro (1978)</p>
+      </li>
+      <li>
+        <h3>Lélia Gonzalez <span class="origem">1935–1994</span></h3>
+        <p>Filósofa e antropóloga. Cunhou a noção de amefricanidade e analisou como racismo e sexismo se articulam na formação brasileira.</p>
+        <p class="origem">Obra de referência: Por um feminismo afro-latino-americano (coletânea póstuma)</p>
+      </li>
+      <li>
+        <h3>Beatriz Nascimento <span class="origem">1942–1995</span></h3>
+        <p>Historiadora. Pensou o quilombo como categoria de existência e o corpo negro como território e arquivo de memória.</p>
+        <p class="origem">Obra de referência: Ensaios reunidos em Uma história feita por mãos negras (2021)</p>
+      </li>
+      <li>
+        <h3>Muniz Sodré <span class="origem">1942–</span></h3>
+        <p>Comunicólogo. Analisou o terreiro como forma social e cosmológica própria, com lógica espacial e temporal distinta da cidade moderna.</p>
+        <p class="origem">Obra de referência: O terreiro e a cidade (1988)</p>
+      </li>
+      <li>
+        <h3>Mãe Stella de Oxóssi <span class="origem">1925–2018</span></h3>
+        <p>Iyalorixá do Ilê Axé Opô Afonjá. Escreveu em nome próprio sobre a tradição e defendeu o fim do sincretismo como estratégia já desnecessária.</p>
+        <p class="origem">Obra de referência: Meu Tempo é Agora (1993)</p>
+      </li>
+      <li>
+        <h3>Juana Elbein dos Santos <span class="origem">1931–2008</span></h3>
+        <p>Antropóloga. Referência sobre a cosmologia nagô, o culto aos ancestrais e a noção de àṣẹ.</p>
+        <p class="origem">Obra de referência: Os Nàgô e a Morte (1975)</p>
+      </li>
+      <li>
+        <h3>Reginaldo Prandi <span class="origem">1946–</span></h3>
+        <p>Sociólogo. Reuniu e organizou corpus mitológico e estudou a expansão do Candomblé no Brasil urbano.</p>
+        <p class="origem">Obra de referência: Mitologia dos Orixás (2001)</p>
+      </li>
+      <li>
+        <h3>Nei Lopes <span class="origem">1942–</span></h3>
+        <p>Compositor e pesquisador. Documentou a herança bantu, sistematicamente subestimada frente à matriz iorubá.</p>
+        <p class="origem">Obra de referência: Enciclopédia Brasileira da Diáspora Africana (2004)</p>
+      </li>
+    </ul>
+  </section>
+  <section class="envolt">
+    <span class="olho">História que não se omite</span>
+    <h2>Racismo religioso</h2>
+    <p>Os cultos de matriz africana foram criminalizados no Brasil. O Código Penal de 1890 enquadrava práticas religiosas afro-brasileiras sob os tipos de curandeirismo, magia e feitiçaria. Terreiros foram invadidos por polícia, objetos sagrados foram apreendidos e passaram a compor acervos de museus policiais.</p>
+    <p>A exigência de autorização policial para funcionamento de terreiros perdurou em estados brasileiros até a segunda metade do século XX. A perseguição não é passado remoto: ataques a casas de santo, destruição de assentamentos e intimidação de praticantes seguem sendo registrados por delegacias e observatórios de intolerância religiosa.</p>
+    <p>Nomear isso não é digressão política. Uma parte do que se perdeu do repertório dessas tradições se perdeu por perseguição — e qualquer apresentação pública que omita esse fato apresenta uma tradição sem a história que a moldou.</p>
+  </section>
+
+  <div class="envolt" style="padding-bottom:3rem">
+    <div class="nota-cuidado">
+      <strong>Nota de cuidado</strong>
+      <p>Práticas espirituais e comunitárias podem oferecer pertencimento, consolo e significado. Elas não substituem avaliação médica ou psicológica quando há sofrimento persistente, prejuízo funcional, risco, sintomas físicos importantes ou emergência. O cuidado pode ser construído de modo respeitoso e complementar, com consentimento da pessoa.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="rodape">
+  <div class="envolt">
+    <div class="rodape-grade">
+      <div>
+        <h4>Percorrer</h4>
+        <a href="devocional.html">Meditação do dia</a>
+        <a href="principios.html">Os cinco princípios</a>
+        <a href="tradicoes.html">Tradições</a>
+        <a href="orixas.html">Cosmologia</a>
+      </div>
+      <div>
+        <h4>Compromisso</h4>
+        <a href="metodo-editorial.html">Método editorial</a>
+        <a href="fontes.html">Fontes e créditos</a>
+        <a href="vozes.html">Vozes e racismo religioso</a>
+        <a href="autor.html">Sobre o autor</a>
+      </div>
+      <div>
+        <h4>Projeto</h4>
+        <a href="https://vidaesentido.com.br" rel="noopener">Projeto Vida e Sentido</a>
+        <a href="https://github.com/edumimessi/luzeaxe" rel="noopener">Código no GitHub</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>Site educativo. Apresenta conceitos publicados em literatura acadêmica e em obras de autoria de pessoas das próprias tradições. Não transmite fundamento, segredo iniciático ou liturgia, e não substitui terreiro, comunidade ou orientação de lideranças religiosas.</p>
+      <p>Práticas espirituais e comunitárias não substituem avaliação médica ou psicológica.</p>
+      <p>© <span id="ano">2026</span> Dr. Eduardo D'Angelo Mimessi. Concebido e curado editorialmente pelo autor, desenvolvido com apoio de ferramentas digitais.</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/app.js"></script>
+
 </body>
 </html>
