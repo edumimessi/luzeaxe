@@ -53,10 +53,8 @@
   <div class="envolt hero" style="padding-bottom:1.5rem">
     <span class="olho">Meditação do dia</span>
     <h1>Uma leitura por dia</h1>
-    <p class="sub">Cada leitura segue sempre a mesma ordem: termo da tradição com língua de origem, contexto com a obra que o sustenta, reflexão do autor, diálogo existencial proposto pelo autor e uma pergunta aberta. Os selos deixam explícito onde termina a tradição e começa a interpretação.</p>
-    <p class="sub">Não há exercício a cumprir nem resposta esperada. Uma leitura por dia, e o que ela mover é assunto de quem lê.</p>
-    <p class="origem" style="margin-top:1rem">Ciclo previsto: 366 leituras. Publicadas: 30. Todas são <strong>reflexões autorais</strong> a partir das obras listadas em Fontes.</p>
-    <p id="aviso-ciclo" class="nota-cuidado" hidden><strong>Acervo em construção.</strong> Enquanto as 366 leituras não estiverem escritas e revisadas, a seleção diária percorre o acervo preliminar e pode reaparecer. Ela não é apresentada como calendário anual completo.</p>
+    <p class="sub">Uma reflexão e uma pergunta aberta para cada data do ano, acompanhadas de termos das tradições e de suas referências.</p>
+    <p class="origem">366 reflexões no acervo, incluindo 29 de fevereiro. A leitura de hoje segue o horário de São Paulo.</p>
   </div>
 
   <section class="envolt" style="border-top:0;padding-top:0">
@@ -80,43 +78,379 @@
   <section class="envolt acervo" id="acervo">
     <h2>Acervo de meditações</h2>
     <div class="acervo-filtros">
-      <label>Buscar por título, termo ou princípio
+      <label>Buscar por título, termo, princípio ou data (DD/MM)
         <input id="buscar-leitura" type="search" autocomplete="off">
       </label>
       <label class="so-favoritos"><input id="so-favoritos" type="checkbox"> Mostrar apenas favoritos</label>
     </div>
     <p id="resultado-acervo" class="origem" role="status"></p>
     <ul class="limpa acervo-lista">
-      <li data-leitura="1"><a href="devocional.html?leitura=1#leitor">Você chegou no meio da história</a><span>Ìtàn</span></li>
-      <li data-leitura="2"><a href="devocional.html?leitura=2#leitor">A travessia que ninguém escolheu</a><span>Kalunga</span></li>
-      <li data-leitura="3"><a href="devocional.html?leitura=3#leitor">A cabeça que é sua</a><span>Orí</span></li>
-      <li data-leitura="4"><a href="devocional.html?leitura=4#leitor">O que foi escolhido e o que resta escolher</a><span>Àyànmọ́</span></li>
-      <li data-leitura="5"><a href="devocional.html?leitura=5#leitor">Caráter é o que fica</a><span>Ìwà</span></li>
-      <li data-leitura="6"><a href="devocional.html?leitura=6#leitor">Saudar antes de pedir</a><span>Ìbà</span></li>
-      <li data-leitura="7"><a href="devocional.html?leitura=7#leitor">A força que só existe circulando</a><span>Àṣẹ</span></li>
-      <li data-leitura="8"><a href="devocional.html?leitura=8#leitor">O sopro que não é seu</a><span>Ẹ̀mí</span></li>
-      <li data-leitura="9"><a href="devocional.html?leitura=9#leitor">Pessoa é sempre pessoa-com</a><span>Muntu</span></li>
-      <li data-leitura="10"><a href="devocional.html?leitura=10#leitor">A palavra tem peso</a><span>Ọ̀rọ̀</span></li>
-      <li data-leitura="11"><a href="devocional.html?leitura=11#leitor">Bem-estar não é ausência de problema</a><span>Ire</span></li>
-      <li data-leitura="12"><a href="devocional.html?leitura=12#leitor">O que o peito sabe</a><span>Ẹ̀rí-ọkàn</span></li>
-      <li data-leitura="13"><a href="devocional.html?leitura=13#leitor">Pertencer é aceitar ter lugar</a><span>Egbé</span></li>
-      <li data-leitura="14"><a href="devocional.html?leitura=14#leitor">A casa que não é de sangue</a><span>Ìdílé</span></li>
-      <li data-leitura="15"><a href="devocional.html?leitura=15#leitor">Ter chão</a><span>Ilé</span></li>
-      <li data-leitura="16"><a href="devocional.html?leitura=16#leitor">Uma comparação que precisa ser declarada</a><span>Ubuntu</span></li>
-      <li data-leitura="17"><a href="devocional.html?leitura=17#leitor">Amizade é obra, não acaso</a><span>Ọ̀rẹ́</span></li>
-      <li data-leitura="18"><a href="devocional.html?leitura=18#leitor">Dois mundos que se falam</a><span>Aiyê e Òrun</span></li>
-      <li data-leitura="19"><a href="devocional.html?leitura=19#leitor">O corpo não é obstáculo</a><span>Ara</span></li>
-      <li data-leitura="20"><a href="devocional.html?leitura=20#leitor">Caminho se faz com os pés</a><span>Ẹsẹ̀</span></li>
-      <li data-leitura="21"><a href="devocional.html?leitura=21#leitor">A mão que faz</a><span>Ọwọ́</span></li>
-      <li data-leitura="22"><a href="devocional.html?leitura=22#leitor">Estar presente é ser visto</a><span>Ojú</span></li>
-      <li data-leitura="23"><a href="devocional.html?leitura=23#leitor">Ritmo organiza</a><span>Ìlù</span></li>
-      <li data-leitura="24"><a href="devocional.html?leitura=24#leitor">Alegria também é matéria séria</a><span>Ìjó</span></li>
-      <li data-leitura="25"><a href="devocional.html?leitura=25#leitor">O que volta pede outra resposta</a><span>Àtúnwá</span></li>
-      <li data-leitura="26"><a href="devocional.html?leitura=26#leitor">O ano recomeça</a><span>Ọdún</span></li>
-      <li data-leitura="27"><a href="devocional.html?leitura=27#leitor">Tempo não é só relógio</a><span>Àkókò</span></li>
-      <li data-leitura="28"><a href="devocional.html?leitura=28#leitor">Voltar não é retroceder</a><span>Ìpadàbọ̀</span></li>
-      <li data-leitura="29"><a href="devocional.html?leitura=29#leitor">A corrente das gerações</a><span>Ìran</span></li>
-      <li data-leitura="30"><a href="devocional.html?leitura=30#leitor">Paz inteira, não paz de aparência</a><span>Àlàáfíà</span></li>
+      <li data-leitura="1" data-data="01/01"><a href="devocional.html?leitura=1#leitor">Você chegou no meio da história</a><span>01/01 · Ìtàn</span></li>
+      <li data-leitura="2" data-data="02/01"><a href="devocional.html?leitura=2#leitor">A travessia que ninguém escolheu</a><span>02/01 · Kalunga</span></li>
+      <li data-leitura="3" data-data="03/01"><a href="devocional.html?leitura=3#leitor">A cabeça que é sua</a><span>03/01 · Orí</span></li>
+      <li data-leitura="4" data-data="04/01"><a href="devocional.html?leitura=4#leitor">O que foi escolhido e o que resta escolher</a><span>04/01 · Àyànmọ́</span></li>
+      <li data-leitura="5" data-data="05/01"><a href="devocional.html?leitura=5#leitor">Caráter é o que fica</a><span>05/01 · Ìwà</span></li>
+      <li data-leitura="6" data-data="06/01"><a href="devocional.html?leitura=6#leitor">Saudar antes de pedir</a><span>06/01 · Ìbà</span></li>
+      <li data-leitura="7" data-data="07/01"><a href="devocional.html?leitura=7#leitor">A força que só existe circulando</a><span>07/01 · Àṣẹ</span></li>
+      <li data-leitura="8" data-data="08/01"><a href="devocional.html?leitura=8#leitor">O sopro que não é seu</a><span>08/01 · Ẹ̀mí</span></li>
+      <li data-leitura="9" data-data="09/01"><a href="devocional.html?leitura=9#leitor">Pessoa é sempre pessoa-com</a><span>09/01 · Muntu</span></li>
+      <li data-leitura="10" data-data="10/01"><a href="devocional.html?leitura=10#leitor">A palavra tem peso</a><span>10/01 · Ọ̀rọ̀</span></li>
+      <li data-leitura="11" data-data="11/01"><a href="devocional.html?leitura=11#leitor">Bem-estar não é ausência de problema</a><span>11/01 · Ire</span></li>
+      <li data-leitura="12" data-data="12/01"><a href="devocional.html?leitura=12#leitor">O que o peito sabe</a><span>12/01 · Ẹ̀rí-ọkàn</span></li>
+      <li data-leitura="13" data-data="13/01"><a href="devocional.html?leitura=13#leitor">Pertencer é aceitar ter lugar</a><span>13/01 · Egbé</span></li>
+      <li data-leitura="14" data-data="14/01"><a href="devocional.html?leitura=14#leitor">A casa que não é de sangue</a><span>14/01 · Ìdílé</span></li>
+      <li data-leitura="15" data-data="15/01"><a href="devocional.html?leitura=15#leitor">Ter chão</a><span>15/01 · Ilé</span></li>
+      <li data-leitura="16" data-data="16/01"><a href="devocional.html?leitura=16#leitor">Uma comparação que precisa ser declarada</a><span>16/01 · Ubuntu</span></li>
+      <li data-leitura="17" data-data="17/01"><a href="devocional.html?leitura=17#leitor">Amizade é obra, não acaso</a><span>17/01 · Ọ̀rẹ́</span></li>
+      <li data-leitura="18" data-data="18/01"><a href="devocional.html?leitura=18#leitor">Dois mundos que se falam</a><span>18/01 · Aiyê e Òrun</span></li>
+      <li data-leitura="19" data-data="19/01"><a href="devocional.html?leitura=19#leitor">O corpo não é obstáculo</a><span>19/01 · Ara</span></li>
+      <li data-leitura="20" data-data="20/01"><a href="devocional.html?leitura=20#leitor">Caminho se faz com os pés</a><span>20/01 · Ẹsẹ̀</span></li>
+      <li data-leitura="21" data-data="21/01"><a href="devocional.html?leitura=21#leitor">A mão que faz</a><span>21/01 · Ọwọ́</span></li>
+      <li data-leitura="22" data-data="22/01"><a href="devocional.html?leitura=22#leitor">Estar presente é ser visto</a><span>22/01 · Ojú</span></li>
+      <li data-leitura="23" data-data="23/01"><a href="devocional.html?leitura=23#leitor">Ritmo organiza</a><span>23/01 · Ìlù</span></li>
+      <li data-leitura="24" data-data="24/01"><a href="devocional.html?leitura=24#leitor">Alegria também é matéria séria</a><span>24/01 · Ìjó</span></li>
+      <li data-leitura="25" data-data="25/01"><a href="devocional.html?leitura=25#leitor">O que volta pede outra resposta</a><span>25/01 · Àtúnwá</span></li>
+      <li data-leitura="26" data-data="26/01"><a href="devocional.html?leitura=26#leitor">O ano recomeça</a><span>26/01 · Ọdún</span></li>
+      <li data-leitura="27" data-data="27/01"><a href="devocional.html?leitura=27#leitor">Tempo não é só relógio</a><span>27/01 · Àkókò</span></li>
+      <li data-leitura="28" data-data="28/01"><a href="devocional.html?leitura=28#leitor">Voltar não é retroceder</a><span>28/01 · Ìpadàbọ̀</span></li>
+      <li data-leitura="29" data-data="29/01"><a href="devocional.html?leitura=29#leitor">A corrente das gerações</a><span>29/01 · Ìran</span></li>
+      <li data-leitura="30" data-data="30/01"><a href="devocional.html?leitura=30#leitor">Paz inteira, não paz de aparência</a><span>30/01 · Àlàáfíà</span></li>
+      <li data-leitura="31" data-data="31/01"><a href="devocional.html?leitura=31#leitor">O nome na fotografia</a><span>31/01 · Ìtàn</span></li>
+      <li data-leitura="32" data-data="01/02"><a href="devocional.html?leitura=32#leitor">A promessa cumprida</a><span>01/02 · Àṣẹ</span></li>
+      <li data-leitura="33" data-data="02/02"><a href="devocional.html?leitura=33#leitor">O convite com endereço</a><span>02/02 · Egbé</span></li>
+      <li data-leitura="34" data-data="03/02"><a href="devocional.html?leitura=34#leitor">A marca da alça</a><span>03/02 · Ara</span></li>
+      <li data-leitura="35" data-data="04/02"><a href="devocional.html?leitura=35#leitor">A segunda visita ao mesmo lugar</a><span>04/02 · Àkókò</span></li>
+      <li data-leitura="36" data-data="05/02"><a href="devocional.html?leitura=36#leitor">A receita sem medida</a><span>05/02 · Ìtàn</span></li>
+      <li data-leitura="37" data-data="06/02"><a href="devocional.html?leitura=37#leitor">Ferramenta em circulação</a><span>06/02 · Àṣẹ</span></li>
+      <li data-leitura="38" data-data="07/02"><a href="devocional.html?leitura=38#leitor">A primeira roda</a><span>07/02 · Egbé</span></li>
+      <li data-leitura="39" data-data="08/02"><a href="devocional.html?leitura=39#leitor">O banco alto</a><span>08/02 · Ara</span></li>
+      <li data-leitura="40" data-data="09/02"><a href="devocional.html?leitura=40#leitor">O dia depois da comemoração</a><span>09/02 · Àkókò</span></li>
+      <li data-leitura="41" data-data="10/02"><a href="devocional.html?leitura=41#leitor">A língua na cozinha</a><span>10/02 · Ìtàn</span></li>
+      <li data-leitura="42" data-data="11/02"><a href="devocional.html?leitura=42#leitor">O crédito público</a><span>11/02 · Àṣẹ</span></li>
+      <li data-leitura="43" data-data="12/02"><a href="devocional.html?leitura=43#leitor">O lugar de quem discorda</a><span>12/02 · Egbé</span></li>
+      <li data-leitura="44" data-data="13/02"><a href="devocional.html?leitura=44#leitor">O passo do acompanhante</a><span>13/02 · Ara</span></li>
+      <li data-leitura="45" data-data="14/02"><a href="devocional.html?leitura=45#leitor">O calendário na porta</a><span>14/02 · Àkókò</span></li>
+      <li data-leitura="46" data-data="15/02"><a href="devocional.html?leitura=46#leitor">A cadeira vazia</a><span>15/02 · Ìtàn</span></li>
+      <li data-leitura="47" data-data="16/02"><a href="devocional.html?leitura=47#leitor">Doar com escolha</a><span>16/02 · Àṣẹ</span></li>
+      <li data-leitura="48" data-data="17/02"><a href="devocional.html?leitura=48#leitor">O café depois da notícia</a><span>17/02 · Egbé</span></li>
+      <li data-leitura="49" data-data="18/02"><a href="devocional.html?leitura=49#leitor">A água antes da fala</a><span>18/02 · Ara</span></li>
+      <li data-leitura="50" data-data="19/02"><a href="devocional.html?leitura=50#leitor">A primeira semana do trabalho</a><span>19/02 · Àkókò</span></li>
+      <li data-leitura="51" data-data="20/02"><a href="devocional.html?leitura=51#leitor">Os papéis guardados</a><span>20/02 · Ìtàn</span></li>
+      <li data-leitura="52" data-data="21/02"><a href="devocional.html?leitura=52#leitor">O pedido bem formulado</a><span>21/02 · Àṣẹ</span></li>
+      <li data-leitura="53" data-data="22/02"><a href="devocional.html?leitura=53#leitor">A pessoa que ficou do lado de fora</a><span>22/02 · Egbé</span></li>
+      <li data-leitura="54" data-data="23/02"><a href="devocional.html?leitura=54#leitor">A roupa da primeira entrevista</a><span>23/02 · Ara</span></li>
+      <li data-leitura="55" data-data="24/02"><a href="devocional.html?leitura=55#leitor">A volta a uma decisão antiga</a><span>24/02 · Àkókò</span></li>
+      <li data-leitura="56" data-data="25/02"><a href="devocional.html?leitura=56#leitor">A quem pertence o relato</a><span>25/02 · Ìtàn</span></li>
+      <li data-leitura="57" data-data="26/02"><a href="devocional.html?leitura=57#leitor">O vizinho que tem a chave</a><span>26/02 · Àṣẹ</span></li>
+      <li data-leitura="58" data-data="27/02"><a href="devocional.html?leitura=58#leitor">A falta sentida</a><span>27/02 · Egbé</span></li>
+      <li data-leitura="59" data-data="28/02"><a href="devocional.html?leitura=59#leitor">A mão que hesita</a><span>28/02 · Ara</span></li>
+      <li data-leitura="60" data-data="29/02"><a href="devocional.html?leitura=60#leitor">A data que não veio este ano</a><span>29/02 · Àkókò</span></li>
+      <li data-leitura="61" data-data="01/03"><a href="devocional.html?leitura=61#leitor">Quando o mês termina cedo</a><span>01/03 · Àkókò</span></li>
+      <li data-leitura="62" data-data="02/03"><a href="devocional.html?leitura=62#leitor">O sobrenome omitido</a><span>02/03 · Ìtàn</span></li>
+      <li data-leitura="63" data-data="03/03"><a href="devocional.html?leitura=63#leitor">O caminho do alimento</a><span>03/03 · Àṣẹ</span></li>
+      <li data-leitura="64" data-data="04/03"><a href="devocional.html?leitura=64#leitor">Duas formas de falar</a><span>04/03 · Egbé</span></li>
+      <li data-leitura="65" data-data="05/03"><a href="devocional.html?leitura=65#leitor">O movimento que chega pelo som</a><span>05/03 · Ara</span></li>
+      <li data-leitura="66" data-data="06/03"><a href="devocional.html?leitura=66#leitor">O ciclo da manutenção</a><span>06/03 · Àkókò</span></li>
+      <li data-leitura="67" data-data="07/03"><a href="devocional.html?leitura=67#leitor">O sotaque de volta</a><span>07/03 · Ìtàn</span></li>
+      <li data-leitura="68" data-data="08/03"><a href="devocional.html?leitura=68#leitor">A senha que organiza o acesso</a><span>08/03 · Àṣẹ</span></li>
+      <li data-leitura="69" data-data="09/03"><a href="devocional.html?leitura=69#leitor">O horário que exclui</a><span>09/03 · Egbé</span></li>
+      <li data-leitura="70" data-data="10/03"><a href="devocional.html?leitura=70#leitor">O corpo em cadeira diferente</a><span>10/03 · Ara</span></li>
+      <li data-leitura="71" data-data="11/03"><a href="devocional.html?leitura=71#leitor">A despedida que chegou aos poucos</a><span>11/03 · Àkókò</span></li>
+      <li data-leitura="72" data-data="12/03"><a href="devocional.html?leitura=72#leitor">A casa que mudou de mãos</a><span>12/03 · Ìtàn</span></li>
+      <li data-leitura="73" data-data="13/03"><a href="devocional.html?leitura=73#leitor">O saber entregue adiante</a><span>13/03 · Àṣẹ</span></li>
+      <li data-leitura="74" data-data="14/03"><a href="devocional.html?leitura=74#leitor">A sala fechada</a><span>14/03 · Egbé</span></li>
+      <li data-leitura="75" data-data="15/03"><a href="devocional.html?leitura=75#leitor">O caminho mais comprido e plano</a><span>15/03 · Ara</span></li>
+      <li data-leitura="76" data-data="16/03"><a href="devocional.html?leitura=76#leitor">O retorno da leitura marcada</a><span>16/03 · Àkókò</span></li>
+      <li data-leitura="77" data-data="17/03"><a href="devocional.html?leitura=77#leitor">Uma história sem retrato</a><span>17/03 · Ìtàn</span></li>
+      <li data-leitura="78" data-data="18/03"><a href="devocional.html?leitura=78#leitor">A coragem de dizer chega</a><span>18/03 · Àṣẹ</span></li>
+      <li data-leitura="79" data-data="19/03"><a href="devocional.html?leitura=79#leitor">O parente que mora longe</a><span>19/03 · Egbé</span></li>
+      <li data-leitura="80" data-data="20/03"><a href="devocional.html?leitura=80#leitor">A respiração antes do nome</a><span>20/03 · Ara</span></li>
+      <li data-leitura="81" data-data="21/03"><a href="devocional.html?leitura=81#leitor">O primeiro encontro depois da chuva</a><span>21/03 · Àkókò</span></li>
+      <li data-leitura="82" data-data="22/03"><a href="devocional.html?leitura=82#leitor">Os brinquedos reparados</a><span>22/03 · Ìtàn</span></li>
+      <li data-leitura="83" data-data="23/03"><a href="devocional.html?leitura=83#leitor">O favor sem registro de dívida</a><span>23/03 · Àṣẹ</span></li>
+      <li data-leitura="84" data-data="24/03"><a href="devocional.html?leitura=84#leitor">A escolha de ficar calado</a><span>24/03 · Egbé</span></li>
+      <li data-leitura="85" data-data="25/03"><a href="devocional.html?leitura=85#leitor">A janela em dia de calor</a><span>25/03 · Ara</span></li>
+      <li data-leitura="86" data-data="26/03"><a href="devocional.html?leitura=86#leitor">Quando o dia fica mais curto</a><span>26/03 · Àkókò</span></li>
+      <li data-leitura="87" data-data="27/03"><a href="devocional.html?leitura=87#leitor">A herança da dívida</a><span>27/03 · Ìtàn</span></li>
+      <li data-leitura="88" data-data="28/03"><a href="devocional.html?leitura=88#leitor">A palavra verificável</a><span>28/03 · Àṣẹ</span></li>
+      <li data-leitura="89" data-data="29/03"><a href="devocional.html?leitura=89#leitor">O cuidado que ganha turno</a><span>29/03 · Egbé</span></li>
+      <li data-leitura="90" data-data="30/03"><a href="devocional.html?leitura=90#leitor">A mão esquerda à mesa</a><span>30/03 · Ara</span></li>
+      <li data-leitura="91" data-data="31/03"><a href="devocional.html?leitura=91#leitor">O canto de encerramento</a><span>31/03 · Àkókò</span></li>
+      <li data-leitura="92" data-data="01/04"><a href="devocional.html?leitura=92#leitor">O portão da escola</a><span>01/04 · Ìtàn</span></li>
+      <li data-leitura="93" data-data="02/04"><a href="devocional.html?leitura=93#leitor">O saldo da conversa</a><span>02/04 · Àṣẹ</span></li>
+      <li data-leitura="94" data-data="03/04"><a href="devocional.html?leitura=94#leitor">A senha para participar da conversa</a><span>03/04 · Egbé</span></li>
+      <li data-leitura="95" data-data="04/04"><a href="devocional.html?leitura=95#leitor">O espelho do vestiário</a><span>04/04 · Ara</span></li>
+      <li data-leitura="96" data-data="05/04"><a href="devocional.html?leitura=96#leitor">A roupa que volta do conserto</a><span>05/04 · Àkókò</span></li>
+      <li data-leitura="97" data-data="06/04"><a href="devocional.html?leitura=97#leitor">A profissão que se repete</a><span>06/04 · Ìtàn</span></li>
+      <li data-leitura="98" data-data="07/04"><a href="devocional.html?leitura=98#leitor">O carregador na mala</a><span>07/04 · Àṣẹ</span></li>
+      <li data-leitura="99" data-data="08/04"><a href="devocional.html?leitura=99#leitor">A visita curta</a><span>08/04 · Egbé</span></li>
+      <li data-leitura="100" data-data="09/04"><a href="devocional.html?leitura=100#leitor">O corpo que envelhece em público</a><span>09/04 · Ara</span></li>
+      <li data-leitura="101" data-data="10/04"><a href="devocional.html?leitura=101#leitor">O retorno com fronteiras</a><span>10/04 · Àkókò</span></li>
+      <li data-leitura="102" data-data="11/04"><a href="devocional.html?leitura=102#leitor">A coragem de discordar</a><span>11/04 · Ìtàn</span></li>
+      <li data-leitura="103" data-data="12/04"><a href="devocional.html?leitura=103#leitor">A correção feita em público</a><span>12/04 · Àṣẹ</span></li>
+      <li data-leitura="104" data-data="13/04"><a href="devocional.html?leitura=104#leitor">O grupo depois da saída</a><span>13/04 · Egbé</span></li>
+      <li data-leitura="105" data-data="14/04"><a href="devocional.html?leitura=105#leitor">A postura de escutar</a><span>14/04 · Ara</span></li>
+      <li data-leitura="106" data-data="15/04"><a href="devocional.html?leitura=106#leitor">O ano de dois endereços</a><span>15/04 · Àkókò</span></li>
+      <li data-leitura="107" data-data="16/04"><a href="devocional.html?leitura=107#leitor">O erro contado inteiro</a><span>16/04 · Ìtàn</span></li>
+      <li data-leitura="108" data-data="17/04"><a href="devocional.html?leitura=108#leitor">O encontro preparado</a><span>17/04 · Àṣẹ</span></li>
+      <li data-leitura="109" data-data="18/04"><a href="devocional.html?leitura=109#leitor">O revezamento da palavra</a><span>18/04 · Egbé</span></li>
+      <li data-leitura="110" data-data="19/04"><a href="devocional.html?leitura=110#leitor">As mãos de quem cuida</a><span>19/04 · Ara</span></li>
+      <li data-leitura="111" data-data="20/04"><a href="devocional.html?leitura=111#leitor">A chuva que muda a feira</a><span>20/04 · Àkókò</span></li>
+      <li data-leitura="112" data-data="21/04"><a href="devocional.html?leitura=112#leitor">A gaveta das cartas</a><span>21/04 · Ìtàn</span></li>
+      <li data-leitura="113" data-data="22/04"><a href="devocional.html?leitura=113#leitor">O turno que termina</a><span>22/04 · Àṣẹ</span></li>
+      <li data-leitura="114" data-data="23/04"><a href="devocional.html?leitura=114#leitor">O nome no cadastro</a><span>23/04 · Egbé</span></li>
+      <li data-leitura="115" data-data="24/04"><a href="devocional.html?leitura=115#leitor">O abraço oferecido</a><span>24/04 · Ara</span></li>
+      <li data-leitura="116" data-data="25/04"><a href="devocional.html?leitura=116#leitor">O intervalo de uma amizade</a><span>25/04 · Àkókò</span></li>
+      <li data-leitura="117" data-data="26/04"><a href="devocional.html?leitura=117#leitor">O bairro demolido</a><span>26/04 · Ìtàn</span></li>
+      <li data-leitura="118" data-data="27/04"><a href="devocional.html?leitura=118#leitor">A ajuda que não foi pedida</a><span>27/04 · Àṣẹ</span></li>
+      <li data-leitura="119" data-data="28/04"><a href="devocional.html?leitura=119#leitor">O adiamento que inclui</a><span>28/04 · Egbé</span></li>
+      <li data-leitura="120" data-data="29/04"><a href="devocional.html?leitura=120#leitor">O degrau de dentro de casa</a><span>29/04 · Ara</span></li>
+      <li data-leitura="121" data-data="30/04"><a href="devocional.html?leitura=121#leitor">O nome de um período</a><span>30/04 · Àkókò</span></li>
+      <li data-leitura="122" data-data="01/05"><a href="devocional.html?leitura=122#leitor">O livro devolvido</a><span>01/05 · Ìtàn</span></li>
+      <li data-leitura="123" data-data="02/05"><a href="devocional.html?leitura=123#leitor">O direito de recusar</a><span>02/05 · Àṣẹ</span></li>
+      <li data-leitura="124" data-data="03/05"><a href="devocional.html?leitura=124#leitor">A pessoa que faz a ata</a><span>03/05 · Egbé</span></li>
+      <li data-leitura="125" data-data="04/05"><a href="devocional.html?leitura=125#leitor">O ritmo da refeição</a><span>04/05 · Ara</span></li>
+      <li data-leitura="126" data-data="05/05"><a href="devocional.html?leitura=126#leitor">A lembrança das primeiras tentativas</a><span>05/05 · Àkókò</span></li>
+      <li data-leitura="127" data-data="06/05"><a href="devocional.html?leitura=127#leitor">A profissão sem placa</a><span>06/05 · Ìtàn</span></li>
+      <li data-leitura="128" data-data="07/05"><a href="devocional.html?leitura=128#leitor">A contribuição sem assinatura</a><span>07/05 · Àṣẹ</span></li>
+      <li data-leitura="129" data-data="08/05"><a href="devocional.html?leitura=129#leitor">O banco para esperar junto</a><span>08/05 · Egbé</span></li>
+      <li data-leitura="130" data-data="09/05"><a href="devocional.html?leitura=130#leitor">Quando o ouvido se cansa</a><span>09/05 · Ara</span></li>
+      <li data-leitura="131" data-data="10/05"><a href="devocional.html?leitura=131#leitor">A troca das plantas de lugar</a><span>10/05 · Àkókò</span></li>
+      <li data-leitura="132" data-data="11/05"><a href="devocional.html?leitura=132#leitor">Os dias de visita</a><span>11/05 · Ìtàn</span></li>
+      <li data-leitura="133" data-data="12/05"><a href="devocional.html?leitura=133#leitor">O exagero do elogio</a><span>12/05 · Àṣẹ</span></li>
+      <li data-leitura="134" data-data="13/05"><a href="devocional.html?leitura=134#leitor">O almoço que cabe na despensa</a><span>13/05 · Egbé</span></li>
+      <li data-leitura="135" data-data="14/05"><a href="devocional.html?leitura=135#leitor">O trabalho de ficar em pé</a><span>14/05 · Ara</span></li>
+      <li data-leitura="136" data-data="15/05"><a href="devocional.html?leitura=136#leitor">A semana que começa no domingo</a><span>15/05 · Àkókò</span></li>
+      <li data-leitura="137" data-data="16/05"><a href="devocional.html?leitura=137#leitor">O lugar da madrinha</a><span>16/05 · Ìtàn</span></li>
+      <li data-leitura="138" data-data="17/05"><a href="devocional.html?leitura=138#leitor">A palavra diante da porta</a><span>17/05 · Àṣẹ</span></li>
+      <li data-leitura="139" data-data="18/05"><a href="devocional.html?leitura=139#leitor">O conflito sem torcida</a><span>18/05 · Egbé</span></li>
+      <li data-leitura="140" data-data="19/05"><a href="devocional.html?leitura=140#leitor">O cuidado com a voz</a><span>19/05 · Ara</span></li>
+      <li data-leitura="141" data-data="20/05"><a href="devocional.html?leitura=141#leitor">O silêncio que encerra um assunto</a><span>20/05 · Àkókò</span></li>
+      <li data-leitura="142" data-data="21/05"><a href="devocional.html?leitura=142#leitor">As histórias de mudança</a><span>21/05 · Ìtàn</span></li>
+      <li data-leitura="143" data-data="22/05"><a href="devocional.html?leitura=143#leitor">O preço justo do tempo</a><span>22/05 · Àṣẹ</span></li>
+      <li data-leitura="144" data-data="23/05"><a href="devocional.html?leitura=144#leitor">O pedido de companhia</a><span>23/05 · Egbé</span></li>
+      <li data-leitura="145" data-data="24/05"><a href="devocional.html?leitura=145#leitor">O tempo de calçar os sapatos</a><span>24/05 · Ara</span></li>
+      <li data-leitura="146" data-data="25/05"><a href="devocional.html?leitura=146#leitor">O livro que espera a próxima leitura</a><span>25/05 · Àkókò</span></li>
+      <li data-leitura="147" data-data="26/05"><a href="devocional.html?leitura=147#leitor">O prato servido por último</a><span>26/05 · Ìtàn</span></li>
+      <li data-leitura="148" data-data="27/05"><a href="devocional.html?leitura=148#leitor">O custo da disponibilidade</a><span>27/05 · Àṣẹ</span></li>
+      <li data-leitura="149" data-data="28/05"><a href="devocional.html?leitura=149#leitor">O humor que fecha a roda</a><span>28/05 · Egbé</span></li>
+      <li data-leitura="150" data-data="29/05"><a href="devocional.html?leitura=150#leitor">A dor sem audiência</a><span>29/05 · Ara</span></li>
+      <li data-leitura="151" data-data="30/05"><a href="devocional.html?leitura=151#leitor">A véspera e o dia seguinte</a><span>30/05 · Àkókò</span></li>
+      <li data-leitura="152" data-data="31/05"><a href="devocional.html?leitura=152#leitor">A brincadeira esquecida</a><span>31/05 · Ìtàn</span></li>
+      <li data-leitura="153" data-data="01/06"><a href="devocional.html?leitura=153#leitor">O pote devolvido limpo</a><span>01/06 · Àṣẹ</span></li>
+      <li data-leitura="154" data-data="02/06"><a href="devocional.html?leitura=154#leitor">A visita combinada</a><span>02/06 · Egbé</span></li>
+      <li data-leitura="155" data-data="03/06"><a href="devocional.html?leitura=155#leitor">O olhar na altura dos olhos</a><span>03/06 · Ara</span></li>
+      <li data-leitura="156" data-data="04/06"><a href="devocional.html?leitura=156#leitor">O ritmo depois de uma perda</a><span>04/06 · Àkókò</span></li>
+      <li data-leitura="157" data-data="05/06"><a href="devocional.html?leitura=157#leitor">A memória de uma injustiça</a><span>05/06 · Ìtàn</span></li>
+      <li data-leitura="158" data-data="06/06"><a href="devocional.html?leitura=158#leitor">A informação que abre uma vaga</a><span>06/06 · Àṣẹ</span></li>
+      <li data-leitura="159" data-data="07/06"><a href="devocional.html?leitura=159#leitor">O reconhecimento que atravessa idade</a><span>07/06 · Egbé</span></li>
+      <li data-leitura="160" data-data="08/06"><a href="devocional.html?leitura=160#leitor">O cansaço da última condução</a><span>08/06 · Ara</span></li>
+      <li data-leitura="161" data-data="09/06"><a href="devocional.html?leitura=161#leitor">A tarefa refeita com menos peso</a><span>09/06 · Àkókò</span></li>
+      <li data-leitura="162" data-data="10/06"><a href="devocional.html?leitura=162#leitor">Quem ensinou a perguntar</a><span>10/06 · Ìtàn</span></li>
+      <li data-leitura="163" data-data="11/06"><a href="devocional.html?leitura=163#leitor">O incentivo discreto</a><span>11/06 · Àṣẹ</span></li>
+      <li data-leitura="164" data-data="12/06"><a href="devocional.html?leitura=164#leitor">A pausa de uma cuidadora</a><span>12/06 · Egbé</span></li>
+      <li data-leitura="165" data-data="13/06"><a href="devocional.html?leitura=165#leitor">O gesto conhecido de longe</a><span>13/06 · Ara</span></li>
+      <li data-leitura="166" data-data="14/06"><a href="devocional.html?leitura=166#leitor">O costume que volta em outra idade</a><span>14/06 · Àkókò</span></li>
+      <li data-leitura="167" data-data="15/06"><a href="devocional.html?leitura=167#leitor">O objeto devolvido à família</a><span>15/06 · Ìtàn</span></li>
+      <li data-leitura="168" data-data="16/06"><a href="devocional.html?leitura=168#leitor">A força de um combinado escrito</a><span>16/06 · Àṣẹ</span></li>
+      <li data-leitura="169" data-data="17/06"><a href="devocional.html?leitura=169#leitor">A comitiva do retorno</a><span>17/06 · Egbé</span></li>
+      <li data-leitura="170" data-data="18/06"><a href="devocional.html?leitura=170#leitor">As mãos ocupadas</a><span>18/06 · Ara</span></li>
+      <li data-leitura="171" data-data="19/06"><a href="devocional.html?leitura=171#leitor">A caixa de fim de ano</a><span>19/06 · Àkókò</span></li>
+      <li data-leitura="172" data-data="20/06"><a href="devocional.html?leitura=172#leitor">O aniversário de alguém ausente</a><span>20/06 · Ìtàn</span></li>
+      <li data-leitura="173" data-data="21/06"><a href="devocional.html?leitura=173#leitor">A ajuda pedida cedo</a><span>21/06 · Àṣẹ</span></li>
+      <li data-leitura="174" data-data="22/06"><a href="devocional.html?leitura=174#leitor">A mesa de tamanhos diferentes</a><span>22/06 · Egbé</span></li>
+      <li data-leitura="175" data-data="23/06"><a href="devocional.html?leitura=175#leitor">A luz no corredor</a><span>23/06 · Ara</span></li>
+      <li data-leitura="176" data-data="24/06"><a href="devocional.html?leitura=176#leitor">A expectativa da próxima estação</a><span>24/06 · Àkókò</span></li>
+      <li data-leitura="177" data-data="25/06"><a href="devocional.html?leitura=177#leitor">Uma promessa antiga</a><span>25/06 · Ìtàn</span></li>
+      <li data-leitura="178" data-data="26/06"><a href="devocional.html?leitura=178#leitor">Quando o grupo tem duas chaves</a><span>26/06 · Àṣẹ</span></li>
+      <li data-leitura="179" data-data="27/06"><a href="devocional.html?leitura=179#leitor">O álbum coletivo</a><span>27/06 · Egbé</span></li>
+      <li data-leitura="180" data-data="28/06"><a href="devocional.html?leitura=180#leitor">A comida que muda de textura</a><span>28/06 · Ara</span></li>
+      <li data-leitura="181" data-data="29/06"><a href="devocional.html?leitura=181#leitor">O assunto que sempre volta à mesa</a><span>29/06 · Àkókò</span></li>
+      <li data-leitura="182" data-data="30/06"><a href="devocional.html?leitura=182#leitor">Os registros da cozinha coletiva</a><span>30/06 · Ìtàn</span></li>
+      <li data-leitura="183" data-data="01/07"><a href="devocional.html?leitura=183#leitor">O envelope da vaquinha</a><span>01/07 · Àṣẹ</span></li>
+      <li data-leitura="184" data-data="02/07"><a href="devocional.html?leitura=184#leitor">O pedido feito reservadamente</a><span>02/07 · Egbé</span></li>
+      <li data-leitura="185" data-data="03/07"><a href="devocional.html?leitura=185#leitor">O movimento interrompido</a><span>03/07 · Ara</span></li>
+      <li data-leitura="186" data-data="04/07"><a href="devocional.html?leitura=186#leitor">O regresso ao caminho curto</a><span>04/07 · Àkókò</span></li>
+      <li data-leitura="187" data-data="05/07"><a href="devocional.html?leitura=187#leitor">O apelido que feriu</a><span>05/07 · Ìtàn</span></li>
+      <li data-leitura="188" data-data="06/07"><a href="devocional.html?leitura=188#leitor">A pausa antes do envio</a><span>06/07 · Àṣẹ</span></li>
+      <li data-leitura="189" data-data="07/07"><a href="devocional.html?leitura=189#leitor">A disputa pela presidência da mesa</a><span>07/07 · Egbé</span></li>
+      <li data-leitura="190" data-data="08/07"><a href="devocional.html?leitura=190#leitor">O corpo no transporte lotado</a><span>08/07 · Ara</span></li>
+      <li data-leitura="191" data-data="09/07"><a href="devocional.html?leitura=191#leitor">A última página da agenda</a><span>09/07 · Àkókò</span></li>
+      <li data-leitura="192" data-data="10/07"><a href="devocional.html?leitura=192#leitor">Uma origem com lacunas</a><span>10/07 · Ìtàn</span></li>
+      <li data-leitura="193" data-data="11/07"><a href="devocional.html?leitura=193#leitor">Uma gentileza sem plateia</a><span>11/07 · Àṣẹ</span></li>
+      <li data-leitura="194" data-data="12/07"><a href="devocional.html?leitura=194#leitor">O encontro sem consumo</a><span>12/07 · Egbé</span></li>
+      <li data-leitura="195" data-data="13/07"><a href="devocional.html?leitura=195#leitor">A língua das mãos</a><span>13/07 · Ara</span></li>
+      <li data-leitura="196" data-data="14/07"><a href="devocional.html?leitura=196#leitor">O descanso após a entrega</a><span>14/07 · Àkókò</span></li>
+      <li data-leitura="197" data-data="15/07"><a href="devocional.html?leitura=197#leitor">O vínculo após a mudança</a><span>15/07 · Ìtàn</span></li>
+      <li data-leitura="198" data-data="16/07"><a href="devocional.html?leitura=198#leitor">A energia de recomeçar um projeto</a><span>16/07 · Àṣẹ</span></li>
+      <li data-leitura="199" data-data="17/07"><a href="devocional.html?leitura=199#leitor">O sentido de guardar segredo</a><span>17/07 · Egbé</span></li>
+      <li data-leitura="200" data-data="18/07"><a href="devocional.html?leitura=200#leitor">O cheiro do sabonete antigo</a><span>18/07 · Ara</span></li>
+      <li data-leitura="201" data-data="19/07"><a href="devocional.html?leitura=201#leitor">A conversa que transforma o aniversário</a><span>19/07 · Àkókò</span></li>
+      <li data-leitura="202" data-data="20/07"><a href="devocional.html?leitura=202#leitor">A história de quem permaneceu</a><span>20/07 · Ìtàn</span></li>
+      <li data-leitura="203" data-data="21/07"><a href="devocional.html?leitura=203#leitor">A devolução do microfone</a><span>21/07 · Àṣẹ</span></li>
+      <li data-leitura="204" data-data="22/07"><a href="devocional.html?leitura=204#leitor">A cadeira da pessoa tímida</a><span>22/07 · Egbé</span></li>
+      <li data-leitura="205" data-data="23/07"><a href="devocional.html?leitura=205#leitor">A pausa entre dois andares</a><span>23/07 · Ara</span></li>
+      <li data-leitura="206" data-data="24/07"><a href="devocional.html?leitura=206#leitor">O mês de aprender o trajeto</a><span>24/07 · Àkókò</span></li>
+      <li data-leitura="207" data-data="25/07"><a href="devocional.html?leitura=207#leitor">O aviso no portão</a><span>25/07 · Ìtàn</span></li>
+      <li data-leitura="208" data-data="26/07"><a href="devocional.html?leitura=208#leitor">O texto acessível</a><span>26/07 · Àṣẹ</span></li>
+      <li data-leitura="209" data-data="27/07"><a href="devocional.html?leitura=209#leitor">A ajuda que alterna direção</a><span>27/07 · Egbé</span></li>
+      <li data-leitura="210" data-data="28/07"><a href="devocional.html?leitura=210#leitor">A mão apoiada na parede</a><span>28/07 · Ara</span></li>
+      <li data-leitura="211" data-data="29/07"><a href="devocional.html?leitura=211#leitor">O reparo que volta a abrir</a><span>29/07 · Àkókò</span></li>
+      <li data-leitura="212" data-data="30/07"><a href="devocional.html?leitura=212#leitor">O documento com outro nome</a><span>30/07 · Ìtàn</span></li>
+      <li data-leitura="213" data-data="31/07"><a href="devocional.html?leitura=213#leitor">A manutenção esquecida</a><span>31/07 · Àṣẹ</span></li>
+      <li data-leitura="214" data-data="01/08"><a href="devocional.html?leitura=214#leitor">A fronteira do pertencimento</a><span>01/08 · Egbé</span></li>
+      <li data-leitura="215" data-data="02/08"><a href="devocional.html?leitura=215#leitor">O cansaço da máscara social</a><span>02/08 · Ara</span></li>
+      <li data-leitura="216" data-data="03/08"><a href="devocional.html?leitura=216#leitor">Os domingos no lugar antigo</a><span>03/08 · Àkókò</span></li>
+      <li data-leitura="217" data-data="04/08"><a href="devocional.html?leitura=217#leitor">A mochila emprestada</a><span>04/08 · Ìtàn</span></li>
+      <li data-leitura="218" data-data="05/08"><a href="devocional.html?leitura=218#leitor">O combinado sobre excedentes</a><span>05/08 · Àṣẹ</span></li>
+      <li data-leitura="219" data-data="06/08"><a href="devocional.html?leitura=219#leitor">O assunto que amadurece</a><span>06/08 · Egbé</span></li>
+      <li data-leitura="220" data-data="07/08"><a href="devocional.html?leitura=220#leitor">A temperatura da visita</a><span>07/08 · Ara</span></li>
+      <li data-leitura="221" data-data="08/08"><a href="devocional.html?leitura=221#leitor">A mensagem de muitos anos atrás</a><span>08/08 · Àkókò</span></li>
+      <li data-leitura="222" data-data="09/08"><a href="devocional.html?leitura=222#leitor">O costume do domingo</a><span>09/08 · Ìtàn</span></li>
+      <li data-leitura="223" data-data="10/08"><a href="devocional.html?leitura=223#leitor">A pausa na discussão</a><span>10/08 · Àṣẹ</span></li>
+      <li data-leitura="224" data-data="11/08"><a href="devocional.html?leitura=224#leitor">A palavra de quem chegou cedo</a><span>11/08 · Egbé</span></li>
+      <li data-leitura="225" data-data="12/08"><a href="devocional.html?leitura=225#leitor">A travessia da avenida</a><span>12/08 · Ara</span></li>
+      <li data-leitura="226" data-data="13/08"><a href="devocional.html?leitura=226#leitor">O descanso no meio da colheita</a><span>13/08 · Àkókò</span></li>
+      <li data-leitura="227" data-data="14/08"><a href="devocional.html?leitura=227#leitor">Quem trouxe as notícias</a><span>14/08 · Ìtàn</span></li>
+      <li data-leitura="228" data-data="15/08"><a href="devocional.html?leitura=228#leitor">O trabalho dividido por inteiro</a><span>15/08 · Àṣẹ</span></li>
+      <li data-leitura="229" data-data="16/08"><a href="devocional.html?leitura=229#leitor">A preferência escrita na lista</a><span>16/08 · Egbé</span></li>
+      <li data-leitura="230" data-data="17/08"><a href="devocional.html?leitura=230#leitor">A ferramenta que cabe na mão</a><span>17/08 · Ara</span></li>
+      <li data-leitura="231" data-data="18/08"><a href="devocional.html?leitura=231#leitor">O encontro marcado sem repetição automática</a><span>18/08 · Àkókò</span></li>
+      <li data-leitura="232" data-data="19/08"><a href="devocional.html?leitura=232#leitor">A primeira pessoa a pedir desculpas</a><span>19/08 · Ìtàn</span></li>
+      <li data-leitura="233" data-data="20/08"><a href="devocional.html?leitura=233#leitor">O dinheiro com destino combinado</a><span>20/08 · Àṣẹ</span></li>
+      <li data-leitura="234" data-data="21/08"><a href="devocional.html?leitura=234#leitor">A conversa com quem saiu</a><span>21/08 · Egbé</span></li>
+      <li data-leitura="235" data-data="22/08"><a href="devocional.html?leitura=235#leitor">O corpo depois da noite em claro</a><span>22/08 · Ara</span></li>
+      <li data-leitura="236" data-data="23/08"><a href="devocional.html?leitura=236#leitor">A música ouvida em outro ano</a><span>23/08 · Àkókò</span></li>
+      <li data-leitura="237" data-data="24/08"><a href="devocional.html?leitura=237#leitor">A medida do dinheiro</a><span>24/08 · Ìtàn</span></li>
+      <li data-leitura="238" data-data="25/08"><a href="devocional.html?leitura=238#leitor">As condições de uma oportunidade</a><span>25/08 · Àṣẹ</span></li>
+      <li data-leitura="239" data-data="26/08"><a href="devocional.html?leitura=239#leitor">Um brinde com água</a><span>26/08 · Egbé</span></li>
+      <li data-leitura="240" data-data="27/08"><a href="devocional.html?leitura=240#leitor">O lugar do travesseiro</a><span>27/08 · Ara</span></li>
+      <li data-leitura="241" data-data="28/08"><a href="devocional.html?leitura=241#leitor">A conta que vence todo mês</a><span>28/08 · Àkókò</span></li>
+      <li data-leitura="242" data-data="29/08"><a href="devocional.html?leitura=242#leitor">O ofício que ficou na cidade natal</a><span>29/08 · Ìtàn</span></li>
+      <li data-leitura="243" data-data="30/08"><a href="devocional.html?leitura=243#leitor">O silêncio depois do agradecimento</a><span>30/08 · Àṣẹ</span></li>
+      <li data-leitura="244" data-data="31/08"><a href="devocional.html?leitura=244#leitor">A reunião que termina na hora</a><span>31/08 · Egbé</span></li>
+      <li data-leitura="245" data-data="01/09"><a href="devocional.html?leitura=245#leitor">O balanço que embala</a><span>01/09 · Ara</span></li>
+      <li data-leitura="246" data-data="02/09"><a href="devocional.html?leitura=246#leitor">O aprendizado em espiral</a><span>02/09 · Àkókò</span></li>
+      <li data-leitura="247" data-data="03/09"><a href="devocional.html?leitura=247#leitor">O solo da casa alugada</a><span>03/09 · Ìtàn</span></li>
+      <li data-leitura="248" data-data="04/09"><a href="devocional.html?leitura=248#leitor">O ofício mostrado devagar</a><span>04/09 · Àṣẹ</span></li>
+      <li data-leitura="249" data-data="05/09"><a href="devocional.html?leitura=249#leitor">A troca de gerações na coordenação</a><span>05/09 · Egbé</span></li>
+      <li data-leitura="250" data-data="06/09"><a href="devocional.html?leitura=250#leitor">A expressão após a pergunta</a><span>06/09 · Ara</span></li>
+      <li data-leitura="251" data-data="07/09"><a href="devocional.html?leitura=251#leitor">O começo de uma nova função</a><span>07/09 · Àkókò</span></li>
+      <li data-leitura="252" data-data="08/09"><a href="devocional.html?leitura=252#leitor">A história ouvida na varanda</a><span>08/09 · Ìtàn</span></li>
+      <li data-leitura="253" data-data="09/09"><a href="devocional.html?leitura=253#leitor">A circulação do mérito</a><span>09/09 · Àṣẹ</span></li>
+      <li data-leitura="254" data-data="10/09"><a href="devocional.html?leitura=254#leitor">O erro de falar por alguém</a><span>10/09 · Egbé</span></li>
+      <li data-leitura="255" data-data="11/09"><a href="devocional.html?leitura=255#leitor">O chão frio</a><span>11/09 · Ara</span></li>
+      <li data-leitura="256" data-data="12/09"><a href="devocional.html?leitura=256#leitor">O exercício de esperar a resposta</a><span>12/09 · Àkókò</span></li>
+      <li data-leitura="257" data-data="13/09"><a href="devocional.html?leitura=257#leitor">O cuidado com os originais</a><span>13/09 · Ìtàn</span></li>
+      <li data-leitura="258" data-data="14/09"><a href="devocional.html?leitura=258#leitor">O lugar da devolutiva</a><span>14/09 · Àṣẹ</span></li>
+      <li data-leitura="259" data-data="15/09"><a href="devocional.html?leitura=259#leitor">A solidariedade que deixa escolher</a><span>15/09 · Egbé</span></li>
+      <li data-leitura="260" data-data="16/09"><a href="devocional.html?leitura=260#leitor">A mesa baixa de desenho</a><span>16/09 · Ara</span></li>
+      <li data-leitura="261" data-data="17/09"><a href="devocional.html?leitura=261#leitor">O futuro das anotações</a><span>17/09 · Àkókò</span></li>
+      <li data-leitura="262" data-data="18/09"><a href="devocional.html?leitura=262#leitor">O nome de quem pagou a passagem</a><span>18/09 · Ìtàn</span></li>
+      <li data-leitura="263" data-data="19/09"><a href="devocional.html?leitura=263#leitor">O caminho do dinheiro poupado</a><span>19/09 · Àṣẹ</span></li>
+      <li data-leitura="264" data-data="20/09"><a href="devocional.html?leitura=264#leitor">A porta que fecha para descansar</a><span>20/09 · Egbé</span></li>
+      <li data-leitura="265" data-data="21/09"><a href="devocional.html?leitura=265#leitor">A mochila de um lado só</a><span>21/09 · Ara</span></li>
+      <li data-leitura="266" data-data="22/09"><a href="devocional.html?leitura=266#leitor">O reencontro com uma dificuldade</a><span>22/09 · Àkókò</span></li>
+      <li data-leitura="267" data-data="23/09"><a href="devocional.html?leitura=267#leitor">A primeira noite no lugar novo</a><span>23/09 · Ìtàn</span></li>
+      <li data-leitura="268" data-data="24/09"><a href="devocional.html?leitura=268#leitor">Uma pergunta que poupa trabalho</a><span>24/09 · Àṣẹ</span></li>
+      <li data-leitura="269" data-data="25/09"><a href="devocional.html?leitura=269#leitor">A conversa em torno de um conserto</a><span>25/09 · Egbé</span></li>
+      <li data-leitura="270" data-data="26/09"><a href="devocional.html?leitura=270#leitor">O banco ao sol</a><span>26/09 · Ara</span></li>
+      <li data-leitura="271" data-data="27/09"><a href="devocional.html?leitura=271#leitor">Um ano sem a antiga referência</a><span>27/09 · Àkókò</span></li>
+      <li data-leitura="272" data-data="28/09"><a href="devocional.html?leitura=272#leitor">O presente reaproveitado</a><span>28/09 · Ìtàn</span></li>
+      <li data-leitura="273" data-data="29/09"><a href="devocional.html?leitura=273#leitor">O consentimento para recomendar</a><span>29/09 · Àṣẹ</span></li>
+      <li data-leitura="274" data-data="30/09"><a href="devocional.html?leitura=274#leitor">O luto de quem não era parente</a><span>30/09 · Egbé</span></li>
+      <li data-leitura="275" data-data="01/10"><a href="devocional.html?leitura=275#leitor">A conversa sem olhar fixo</a><span>01/10 · Ara</span></li>
+      <li data-leitura="276" data-data="02/10"><a href="devocional.html?leitura=276#leitor">O fim da época das caixas</a><span>02/10 · Àkókò</span></li>
+      <li data-leitura="277" data-data="03/10"><a href="devocional.html?leitura=277#leitor">O sobrenome escolhido</a><span>03/10 · Ìtàn</span></li>
+      <li data-leitura="278" data-data="04/10"><a href="devocional.html?leitura=278#leitor">O recurso que ninguém entende</a><span>04/10 · Àṣẹ</span></li>
+      <li data-leitura="279" data-data="05/10"><a href="devocional.html?leitura=279#leitor">A presença que se comunica de outro modo</a><span>05/10 · Egbé</span></li>
+      <li data-leitura="280" data-data="06/10"><a href="devocional.html?leitura=280#leitor">O costume de carregar tudo</a><span>06/10 · Ara</span></li>
+      <li data-leitura="281" data-data="07/10"><a href="devocional.html?leitura=281#leitor">O sábado da limpeza</a><span>07/10 · Àkókò</span></li>
+      <li data-leitura="282" data-data="08/10"><a href="devocional.html?leitura=282#leitor">As histórias da fila</a><span>08/10 · Ìtàn</span></li>
+      <li data-leitura="283" data-data="09/10"><a href="devocional.html?leitura=283#leitor">A volta do apoio recebido</a><span>09/10 · Àṣẹ</span></li>
+      <li data-leitura="284" data-data="10/10"><a href="devocional.html?leitura=284#leitor">O pedido de perdão com consequências</a><span>10/10 · Egbé</span></li>
+      <li data-leitura="285" data-data="11/10"><a href="devocional.html?leitura=285#leitor">A sala que ecoa</a><span>11/10 · Ara</span></li>
+      <li data-leitura="286" data-data="12/10"><a href="devocional.html?leitura=286#leitor">A pausa que deu medida ao projeto</a><span>12/10 · Àkókò</span></li>
+      <li data-leitura="287" data-data="13/10"><a href="devocional.html?leitura=287#leitor">O que os netos perguntam</a><span>13/10 · Ìtàn</span></li>
+      <li data-leitura="288" data-data="14/10"><a href="devocional.html?leitura=288#leitor">O sim com prazo</a><span>14/10 · Àṣẹ</span></li>
+      <li data-leitura="289" data-data="15/10"><a href="devocional.html?leitura=289#leitor">A confiança na troca de plantão</a><span>15/10 · Egbé</span></li>
+      <li data-leitura="290" data-data="16/10"><a href="devocional.html?leitura=290#leitor">O ritmo entre dois instrumentos</a><span>16/10 · Ara</span></li>
+      <li data-leitura="291" data-data="17/10"><a href="devocional.html?leitura=291#leitor">O aniversário do primeiro passo</a><span>17/10 · Àkókò</span></li>
+      <li data-leitura="292" data-data="18/10"><a href="devocional.html?leitura=292#leitor">A pessoa no fundo da fotografia</a><span>18/10 · Ìtàn</span></li>
+      <li data-leitura="293" data-data="19/10"><a href="devocional.html?leitura=293#leitor">A disposição da cadeira</a><span>19/10 · Àṣẹ</span></li>
+      <li data-leitura="294" data-data="20/10"><a href="devocional.html?leitura=294#leitor">O assunto levado à pessoa certa</a><span>20/10 · Egbé</span></li>
+      <li data-leitura="295" data-data="21/10"><a href="devocional.html?leitura=295#leitor">O corpo na altura da prateleira</a><span>21/10 · Ara</span></li>
+      <li data-leitura="296" data-data="22/10"><a href="devocional.html?leitura=296#leitor">O relógio da pessoa que espera</a><span>22/10 · Àkókò</span></li>
+      <li data-leitura="297" data-data="23/10"><a href="devocional.html?leitura=297#leitor">A força de nomear a origem</a><span>23/10 · Ìtàn</span></li>
+      <li data-leitura="298" data-data="24/10"><a href="devocional.html?leitura=298#leitor">O telefonema assumido</a><span>24/10 · Àṣẹ</span></li>
+      <li data-leitura="299" data-data="25/10"><a href="devocional.html?leitura=299#leitor">O respeito pela refeição de outro</a><span>25/10 · Egbé</span></li>
+      <li data-leitura="300" data-data="26/10"><a href="devocional.html?leitura=300#leitor">A espera por uma sombra</a><span>26/10 · Ara</span></li>
+      <li data-leitura="301" data-data="27/10"><a href="devocional.html?leitura=301#leitor">O cuidado com o penúltimo dia</a><span>27/10 · Àkókò</span></li>
+      <li data-leitura="302" data-data="28/10"><a href="devocional.html?leitura=302#leitor">Uma lembrança que amadurece</a><span>28/10 · Ìtàn</span></li>
+      <li data-leitura="303" data-data="29/10"><a href="devocional.html?leitura=303#leitor">A revisão feita por outra pessoa</a><span>29/10 · Àṣẹ</span></li>
+      <li data-leitura="304" data-data="30/10"><a href="devocional.html?leitura=304#leitor">A regra escrita para todos</a><span>30/10 · Egbé</span></li>
+      <li data-leitura="305" data-data="31/10"><a href="devocional.html?leitura=305#leitor">A diferença de um sapato</a><span>31/10 · Ara</span></li>
+      <li data-leitura="306" data-data="01/11"><a href="devocional.html?leitura=306#leitor">A agenda de quem tem filhos</a><span>01/11 · Àkókò</span></li>
+      <li data-leitura="307" data-data="02/11"><a href="devocional.html?leitura=307#leitor">A palavra dada em outro tempo</a><span>02/11 · Ìtàn</span></li>
+      <li data-leitura="308" data-data="03/11"><a href="devocional.html?leitura=308#leitor">O registro do reparo</a><span>03/11 · Àṣẹ</span></li>
+      <li data-leitura="309" data-data="04/11"><a href="devocional.html?leitura=309#leitor">A fronteira da brincadeira</a><span>04/11 · Egbé</span></li>
+      <li data-leitura="310" data-data="05/11"><a href="devocional.html?leitura=310#leitor">O toque na campainha</a><span>05/11 · Ara</span></li>
+      <li data-leitura="311" data-data="06/11"><a href="devocional.html?leitura=311#leitor">O lugar lembrado por uma visita futura</a><span>06/11 · Àkókò</span></li>
+      <li data-leitura="312" data-data="07/11"><a href="devocional.html?leitura=312#leitor">A mudança de bairro de uma avó</a><span>07/11 · Ìtàn</span></li>
+      <li data-leitura="313" data-data="08/11"><a href="devocional.html?leitura=313#leitor">A conversa que estabelece responsabilidade</a><span>08/11 · Àṣẹ</span></li>
+      <li data-leitura="314" data-data="09/11"><a href="devocional.html?leitura=314#leitor">A visita ao outro lado do bairro</a><span>09/11 · Egbé</span></li>
+      <li data-leitura="315" data-data="10/11"><a href="devocional.html?leitura=315#leitor">O passo aprendido com música</a><span>10/11 · Ara</span></li>
+      <li data-leitura="316" data-data="11/11"><a href="devocional.html?leitura=316#leitor">O acordo provisório que ficou</a><span>11/11 · Àkókò</span></li>
+      <li data-leitura="317" data-data="12/11"><a href="devocional.html?leitura=317#leitor">A lista dos ausentes</a><span>12/11 · Ìtàn</span></li>
+      <li data-leitura="318" data-data="13/11"><a href="devocional.html?leitura=318#leitor">O que falta no elogio a uma equipe</a><span>13/11 · Àṣẹ</span></li>
+      <li data-leitura="319" data-data="14/11"><a href="devocional.html?leitura=319#leitor">A carta de boas-vindas</a><span>14/11 · Egbé</span></li>
+      <li data-leitura="320" data-data="15/11"><a href="devocional.html?leitura=320#leitor">O caderno de letra grande</a><span>15/11 · Ara</span></li>
+      <li data-leitura="321" data-data="16/11"><a href="devocional.html?leitura=321#leitor">O encontro entre marés de trabalho</a><span>16/11 · Àkókò</span></li>
+      <li data-leitura="322" data-data="17/11"><a href="devocional.html?leitura=322#leitor">As histórias de quem voltou</a><span>17/11 · Ìtàn</span></li>
+      <li data-leitura="323" data-data="18/11"><a href="devocional.html?leitura=323#leitor">A ação possível no dia comum</a><span>18/11 · Àṣẹ</span></li>
+      <li data-leitura="324" data-data="19/11"><a href="devocional.html?leitura=324#leitor">O minuto reservado à dúvida</a><span>19/11 · Egbé</span></li>
+      <li data-leitura="325" data-data="20/11"><a href="devocional.html?leitura=325#leitor">O celular entre duas pessoas</a><span>20/11 · Ara</span></li>
+      <li data-leitura="326" data-data="21/11"><a href="devocional.html?leitura=326#leitor">O tempo necessário para elogiar</a><span>21/11 · Àkókò</span></li>
+      <li data-leitura="327" data-data="22/11"><a href="devocional.html?leitura=327#leitor">O retrato que foi levado para longe</a><span>22/11 · Ìtàn</span></li>
+      <li data-leitura="328" data-data="23/11"><a href="devocional.html?leitura=328#leitor">O verbo de uma oferta</a><span>23/11 · Àṣẹ</span></li>
+      <li data-leitura="329" data-data="24/11"><a href="devocional.html?leitura=329#leitor">O acordo de difícil revisão</a><span>24/11 · Egbé</span></li>
+      <li data-leitura="330" data-data="25/11"><a href="devocional.html?leitura=330#leitor">A escolha do assento</a><span>25/11 · Ara</span></li>
+      <li data-leitura="331" data-data="26/11"><a href="devocional.html?leitura=331#leitor">O erro reencontrado no caderno</a><span>26/11 · Àkókò</span></li>
+      <li data-leitura="332" data-data="27/11"><a href="devocional.html?leitura=332#leitor">O barulho do rádio</a><span>27/11 · Ìtàn</span></li>
+      <li data-leitura="333" data-data="28/11"><a href="devocional.html?leitura=333#leitor">A correspondência respondida</a><span>28/11 · Àṣẹ</span></li>
+      <li data-leitura="334" data-data="29/11"><a href="devocional.html?leitura=334#leitor">A pessoa lembrada pela ausência</a><span>29/11 · Egbé</span></li>
+      <li data-leitura="335" data-data="30/11"><a href="devocional.html?leitura=335#leitor">O ar depois da porta</a><span>30/11 · Ara</span></li>
+      <li data-leitura="336" data-data="01/12"><a href="devocional.html?leitura=336#leitor">A chegada do segundo inverno</a><span>01/12 · Àkókò</span></li>
+      <li data-leitura="337" data-data="02/12"><a href="devocional.html?leitura=337#leitor">O banco da praça</a><span>02/12 · Ìtàn</span></li>
+      <li data-leitura="338" data-data="03/12"><a href="devocional.html?leitura=338#leitor">O cuidado com a medida</a><span>03/12 · Àṣẹ</span></li>
+      <li data-leitura="339" data-data="04/12"><a href="devocional.html?leitura=339#leitor">O cuidado com o vizinho recém-chegado</a><span>04/12 · Egbé</span></li>
+      <li data-leitura="340" data-data="05/12"><a href="devocional.html?leitura=340#leitor">O canto que alcança pouco a pouco</a><span>05/12 · Ara</span></li>
+      <li data-leitura="341" data-data="06/12"><a href="devocional.html?leitura=341#leitor">O compromisso de todo dia quinze</a><span>06/12 · Àkókò</span></li>
+      <li data-leitura="342" data-data="07/12"><a href="devocional.html?leitura=342#leitor">Entre a saudade e o arquivo</a><span>07/12 · Ìtàn</span></li>
+      <li data-leitura="343" data-data="08/12"><a href="devocional.html?leitura=343#leitor">O tempo reservado para quem chega</a><span>08/12 · Àṣẹ</span></li>
+      <li data-leitura="344" data-data="09/12"><a href="devocional.html?leitura=344#leitor">A responsabilidade que cabe ao grupo</a><span>09/12 · Egbé</span></li>
+      <li data-leitura="345" data-data="10/12"><a href="devocional.html?leitura=345#leitor">A medida do intervalo escolar</a><span>10/12 · Ara</span></li>
+      <li data-leitura="346" data-data="11/12"><a href="devocional.html?leitura=346#leitor">A solução guardada para o próximo ano</a><span>11/12 · Àkókò</span></li>
+      <li data-leitura="347" data-data="12/12"><a href="devocional.html?leitura=347#leitor">A mesa posta para mais um</a><span>12/12 · Ìtàn</span></li>
+      <li data-leitura="348" data-data="13/12"><a href="devocional.html?leitura=348#leitor">A distância entre intenção e efeito</a><span>13/12 · Àṣẹ</span></li>
+      <li data-leitura="349" data-data="14/12"><a href="devocional.html?leitura=349#leitor">O parentesco da amizade</a><span>14/12 · Egbé</span></li>
+      <li data-leitura="350" data-data="15/12"><a href="devocional.html?leitura=350#leitor">O toque das páginas</a><span>15/12 · Ara</span></li>
+      <li data-leitura="351" data-data="16/12"><a href="devocional.html?leitura=351#leitor">O intervalo entre duas versões de mim</a><span>16/12 · Àkókò</span></li>
+      <li data-leitura="352" data-data="17/12"><a href="devocional.html?leitura=352#leitor">Quando falta o autor da lembrança</a><span>17/12 · Ìtàn</span></li>
+      <li data-leitura="353" data-data="18/12"><a href="devocional.html?leitura=353#leitor">O tempo de permitir resposta</a><span>18/12 · Àṣẹ</span></li>
+      <li data-leitura="354" data-data="19/12"><a href="devocional.html?leitura=354#leitor">O momento de receber crítica</a><span>19/12 · Egbé</span></li>
+      <li data-leitura="355" data-data="20/12"><a href="devocional.html?leitura=355#leitor">O caminho para ver o céu</a><span>20/12 · Ara</span></li>
+      <li data-leitura="356" data-data="21/12"><a href="devocional.html?leitura=356#leitor">A última vez sem anúncio</a><span>21/12 · Àkókò</span></li>
+      <li data-leitura="357" data-data="22/12"><a href="devocional.html?leitura=357#leitor">A carta que ficou sem resposta</a><span>22/12 · Ìtàn</span></li>
+      <li data-leitura="358" data-data="23/12"><a href="devocional.html?leitura=358#leitor">A gratidão que chega a tempo</a><span>23/12 · Àṣẹ</span></li>
+      <li data-leitura="359" data-data="24/12"><a href="devocional.html?leitura=359#leitor">O acordo sobre como sair</a><span>24/12 · Egbé</span></li>
+      <li data-leitura="360" data-data="25/12"><a href="devocional.html?leitura=360#leitor">A mão em trabalho fino</a><span>25/12 · Ara</span></li>
+      <li data-leitura="361" data-data="26/12"><a href="devocional.html?leitura=361#leitor">O passo que leva ao começo</a><span>26/12 · Àkókò</span></li>
+      <li data-leitura="362" data-data="27/12"><a href="devocional.html?leitura=362#leitor">A infância de quem me criou</a><span>27/12 · Ìtàn</span></li>
+      <li data-leitura="363" data-data="28/12"><a href="devocional.html?leitura=363#leitor">Uma partilha que se sustenta</a><span>28/12 · Àṣẹ</span></li>
+      <li data-leitura="364" data-data="29/12"><a href="devocional.html?leitura=364#leitor">A companhia no retorno para casa</a><span>29/12 · Egbé</span></li>
+      <li data-leitura="365" data-data="30/12"><a href="devocional.html?leitura=365#leitor">A memória do bom descanso</a><span>30/12 · Ara</span></li>
+      <li data-leitura="366" data-data="31/12"><a href="devocional.html?leitura=366#leitor">A memória posta em comum</a><span>31/12 · Ìtàn</span></li>
     </ul>
   </section>
 
@@ -159,6 +493,7 @@
   </div>
 </footer>
 <script src="assets/js/app.js"></script>
+<script src="assets/data/ciclo-anual.js"></script>
 <script src="assets/data/reflexoes.js"></script>
 <script src="assets/js/devocional.js"></script>
 </body>

@@ -10,6 +10,11 @@
   var indiceAtual = 0;
   var lista = D.MEDITACOES || [];
   var chaveFavoritos = 'luzeaxe-favoritos';
+  var calendario = D.CALENDARIO || {};
+  var datas = new Map(Object.entries(calendario.porData || {}).map(function ([data, id]) {
+    return [id, data.split('-').reverse().join('/')];
+  }));
+  var porId = new Map(lista.map(function (m) { return [String(m.n), m]; }));
 
   function esc(s) {
     return String(s == null ? '' : s)
@@ -20,16 +25,11 @@
   function dataNoFuso(fuso, agora) {
     var partes = new Intl.DateTimeFormat('en-CA', {
       timeZone: fuso,
-      year: 'numeric', month: '2-digit', day: '2-digit'
+      month: '2-digit', day: '2-digit'
     }).formatToParts(agora || new Date());
     var mapa = {};
     partes.forEach(function (p) { mapa[p.type] = p.value; });
-    return { ano: Number(mapa.year), mes: Number(mapa.month), dia: Number(mapa.day) };
-  }
-
-  function diaDoAnoNoFuso(fuso, agora) {
-    var d = dataNoFuso(fuso, agora);
-    return Math.floor((Date.UTC(d.ano, d.mes - 1, d.dia) - Date.UTC(d.ano, 0, 1)) / 86400000) + 1;
+    return mapa.month + '-' + mapa.day;
   }
 
   function palavras(s) {
@@ -63,7 +63,7 @@
     var total = (D.MEDITACOES || []).length;
     var h = '';
 
-    h += '<span class="olho">' + esc(nomePrincipio(m.principio)) + ' · leitura ' + esc(m.n) + ' de ' + total + '</span>';
+    h += '<span class="olho">' + esc(nomePrincipio(m.principio)) + ' · ' + esc(datas.get(m.n)) + ' · leitura ' + esc(m.n) + ' de ' + total + '</span>';
     h += '<h2>' + esc(m.titulo) + '</h2>';
 
     h += '<span class="selo-genero termo">Termo da tradição</span>';
@@ -77,7 +77,8 @@
     h += '<p class="origem">Fonte: ' + esc(m.fonte) + '</p>';
     h += '</div>';
 
-    h += bloco('autoral', 'Reflexão autoral — Dr. Eduardo Mimessi', 'Reflexão', m.reflexao);
+    var credito = m.textoEditorial ? 'Reflexão editorial' : 'Reflexão autoral — Dr. Eduardo Mimessi';
+    h += bloco('autoral', credito, 'Reflexão', m.reflexao);
     if (m.sentido) h += bloco('autoral', 'Diálogo existencial proposto pelo autor', 'Busca de sentido', m.sentido);
     if (m.consideracao && sobreposicao(m.reflexao, m.consideracao) < 0.55) {
       h += bloco('aplicacao', 'Aplicação existencial — reflexão, não instrução', 'Para considerar', m.consideracao);
@@ -139,8 +140,8 @@
     var ids = favoritos();
     var total = 0;
     document.querySelectorAll('[data-leitura]').forEach(function (item) {
-      var m = lista.find(function (leitura) { return String(leitura.n) === item.dataset.leitura; });
-      var texto = normaliza([m.titulo, m.termo, nomePrincipio(m.principio)].join(' '));
+      var m = porId.get(item.dataset.leitura);
+      var texto = normaliza([m.titulo, m.termo, nomePrincipio(m.principio), item.dataset.data].join(' '));
       item.hidden = !texto.includes(busca) || (soFavoritos && !ids.includes(m.n));
       if (!item.hidden) total += 1;
     });
@@ -175,13 +176,12 @@
     if (!alvo) return;
     if (!lista.length) { alvo.innerHTML = '<p>Nenhuma meditação publicada.</p>'; return; }
 
-    var calendario = D.CALENDARIO || {};
     var fuso = calendario.fuso || 'America/Sao_Paulo';
     function indiceDeHoje() {
-      var dia = diaDoAnoNoFuso(fuso, new Date());
-      var id = calendario.porDiaDoAno && calendario.porDiaDoAno[dia];
+      var data = dataNoFuso(fuso, new Date());
+      var id = (calendario.porData || {})[data];
       var i = lista.findIndex(function (m) { return m.n === id; });
-      return calendario.cicloCompleto && i >= 0 ? i : (dia - 1) % lista.length;
+      return i >= 0 ? i : 0;
     }
 
     function abreEndereco() {
@@ -198,7 +198,6 @@
       window.history.replaceState(null, '', url);
     }
 
-    el('aviso-ciclo').hidden = Boolean(calendario.cicloCompleto);
     abreEndereco();
     window.addEventListener('popstate', abreEndereco);
 

@@ -15,7 +15,9 @@ const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 const docs = join(raiz, 'docs');
 
 const janela = {};
-new Function('window', readFileSync(join(docs, 'assets/data/reflexoes.js'), 'utf8'))(janela);
+for (const arquivo of ['ciclo-anual.js', 'reflexoes.js']) {
+  new Function('window', readFileSync(join(docs, 'assets/data', arquivo), 'utf8'))(janela);
+}
 const D = janela.LUZEAXE;
 
 const SITE = 'https://luzeaxe.com.br';
@@ -125,7 +127,7 @@ ${corpo}
   </div>
 </footer>
 <script src="assets/js/app.js"></script>
-${devocional ? '<script src="assets/data/reflexoes.js"></script>\n<script src="assets/js/devocional.js"></script>' : ''}
+${devocional ? '<script src="assets/data/ciclo-anual.js"></script>\n<script src="assets/data/reflexoes.js"></script>\n<script src="assets/js/devocional.js"></script>' : ''}
 </body>
 </html>
 `;
@@ -193,10 +195,8 @@ paginas.push({
   <div class="envolt hero" style="padding-bottom:1.5rem">
     <span class="olho">Meditação do dia</span>
     <h1>Uma leitura por dia</h1>
-    <p class="sub">Cada leitura segue sempre a mesma ordem: termo da tradição com língua de origem, contexto com a obra que o sustenta, reflexão do autor, diálogo existencial proposto pelo autor e uma pergunta aberta. Os selos deixam explícito onde termina a tradição e começa a interpretação.</p>
-    <p class="sub">Não há exercício a cumprir nem resposta esperada. Uma leitura por dia, e o que ela mover é assunto de quem lê.</p>
-    <p class="origem" style="margin-top:1rem">Ciclo previsto: 366 leituras. Publicadas: ${D.MEDITACOES.length}. Todas são <strong>reflexões autorais</strong> a partir das obras listadas em Fontes.</p>
-    <p id="aviso-ciclo" class="nota-cuidado" hidden><strong>Acervo em construção.</strong> Enquanto as 366 leituras não estiverem escritas e revisadas, a seleção diária percorre o acervo preliminar e pode reaparecer. Ela não é apresentada como calendário anual completo.</p>
+    <p class="sub">Uma reflexão e uma pergunta aberta para cada data do ano, acompanhadas de termos das tradições e de suas referências.</p>
+    <p class="origem">${D.MEDITACOES.length} reflexões no acervo, incluindo 29 de fevereiro. A leitura de hoje segue o horário de São Paulo.</p>
   </div>
 
   <section class="envolt" style="border-top:0;padding-top:0">
@@ -220,14 +220,18 @@ paginas.push({
   <section class="envolt acervo" id="acervo">
     <h2>Acervo de meditações</h2>
     <div class="acervo-filtros">
-      <label>Buscar por título, termo ou princípio
+      <label>Buscar por título, termo, princípio ou data (DD/MM)
         <input id="buscar-leitura" type="search" autocomplete="off">
       </label>
       <label class="so-favoritos"><input id="so-favoritos" type="checkbox"> Mostrar apenas favoritos</label>
     </div>
     <p id="resultado-acervo" class="origem" role="status"></p>
     <ul class="limpa acervo-lista">
-      ${D.MEDITACOES.map((m) => `<li data-leitura="${m.n}"><a href="devocional.html?leitura=${m.n}#leitor">${esc(m.titulo)}</a><span>${esc(m.termo)}</span></li>`).join('\n      ')}
+      ${Object.entries(D.CALENDARIO.porData).map(([data, n], indice) => {
+        const m = D.MEDITACOES[indice];
+        const diaMes = data.split('-').reverse().join('/');
+        return `<li data-leitura="${n}" data-data="${diaMes}"><a href="devocional.html?leitura=${n}#leitor">${esc(m.titulo)}</a><span>${diaMes} · ${esc(m.termo)}</span></li>`;
+      }).join('\n      ')}
     </ul>
   </section>`
 });

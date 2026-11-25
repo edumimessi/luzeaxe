@@ -524,22 +524,36 @@ window.LUZEAXE.MEDITACOES = [
 /* Calendário e rastreabilidade editorial                              */
 /* ------------------------------------------------------------------ */
 
-/*
- * O acervo ainda não constitui um calendário anual completo. Cada
- * posição é explícita para impedir que a simples inclusão de um texto
- * altere silenciosamente todas as leituras seguintes.
- *
- * Quando existirem 366 meditações revisadas, CICLO_COMPLETO deve passar
- * para true. Até lá, a interface identifica a seleção como leitura do
- * acervo em construção, sem prometer uma leitura inédita por dia.
- */
+/* As 30 primeiras leituras conservam seus números e endereços. */
+window.LUZEAXE.MEDITACOES = window.LUZEAXE.MEDITACOES.concat(
+  (window.LUZEAXE_CICLO_ANUAL || []).map(function ([referencia, titulo, reflexao, pergunta], indice) {
+    const base = window.LUZEAXE.MEDITACOES.find(function (m) { return m.n === referencia; });
+    return {
+      n: indice + 31,
+      principio: base.principio,
+      termo: base.termo,
+      idioma: base.idioma,
+      traducao: base.traducao,
+      tradicao: base.tradicao,
+      fonte: base.fonte,
+      contexto: base.contexto,
+      titulo,
+      reflexao,
+      pergunta,
+      textoEditorial: true
+    };
+  })
+);
+
+/* Datas fixas em um ano bissexto de referência. Em anos comuns, 29/02
+ * fica disponível no acervo e 01/03 conserva a mesma reflexão. */
 window.LUZEAXE.CALENDARIO = {
   fuso: 'America/Sao_Paulo',
-  totalPrevisto: 366,
-  cicloCompleto: false,
-  porDiaDoAno: Object.fromEntries(
+  cicloCompleto: window.LUZEAXE.MEDITACOES.length === 366,
+  porData: Object.fromEntries(
     window.LUZEAXE.MEDITACOES.map(function (m, indice) {
-      return [indice + 1, m.n];
+      const data = new Date(Date.UTC(2000, 0, indice + 1));
+      return [data.toISOString().slice(5, 10), m.n];
     })
   )
 };
@@ -555,7 +569,7 @@ window.LUZEAXE.INDICE_EDITORIAL = window.LUZEAXE.MEDITACOES.map(function (m) {
     termo: m.termo,
     tradicao: m.tradicao,
     fonte: m.fonte,
-    natureza: 'paráfrase e síntese educativa',
+    natureza: m.textoEditorial ? 'reflexão editorial e nota de vocabulário' : 'paráfrase e síntese educativa',
     localizador: null,
     fonteConferida: false,
     revisaoExterna: false

@@ -4,7 +4,7 @@
  * HTML de substituição — devolver uma página no lugar de um CSS, script ou
  * imagem quebra o site em vez de degradá-lo.
  */
-const CACHE = 'luzeaxe-v4';
+const CACHE = 'luzeaxe-v5';
 const OFFLINE = './offline.html';
 
 const ESSENCIAIS = [
@@ -12,7 +12,7 @@ const ESSENCIAIS = [
   './orixas.html', './vozes.html', './conceitos.html', './fontes.html',
   './metodo-editorial.html', './autor.html', './offline.html', './404.html',
   './assets/css/site.css',
-  './assets/js/app.js', './assets/js/devocional.js', './assets/data/reflexoes.js',
+  './assets/js/app.js', './assets/js/devocional.js', './assets/data/reflexoes.js', './assets/data/ciclo-anual.js',
   './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'
 ];
 

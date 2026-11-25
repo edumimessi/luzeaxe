@@ -21,7 +21,9 @@ const erro = (m) => erros.push(m);
 const aviso = (m) => avisos.push(m);
 
 const janela = {};
-new Function('window', readFileSync(join(docs, 'assets/data/reflexoes.js'), 'utf8'))(janela);
+for (const arquivo of ['ciclo-anual.js', 'reflexoes.js']) {
+  new Function('window', readFileSync(join(docs, 'assets/data', arquivo), 'utf8'))(janela);
+}
 const D = janela.LUZEAXE;
 
 const camposPublicos = ['titulo', 'contexto', 'reflexao', 'sentido', 'consideracao', 'pergunta'];
@@ -29,7 +31,7 @@ const camposPublicos = ['titulo', 'contexto', 'reflexao', 'sentido', 'considerac
 /* ---- 1. integridade dos dados ---------------------------------- */
 
 const idsPrincipios = new Set(D.PRINCIPIOS.map((p) => p.id));
-const obrigatorios = ['n', 'principio', 'titulo', 'termo', 'idioma', 'traducao', 'tradicao', 'fonte', 'contexto', 'reflexao', 'consideracao', 'pergunta'];
+const obrigatorios = ['n', 'principio', 'titulo', 'termo', 'idioma', 'traducao', 'tradicao', 'fonte', 'contexto', 'reflexao', 'pergunta'];
 
 const vistos = new Set();
 for (const m of D.MEDITACOES) {
@@ -37,13 +39,14 @@ for (const m of D.MEDITACOES) {
   for (const c of obrigatorios) {
     if (!m[c] || String(m[c]).trim() === '') erro(`${rot}: campo obrigatório ausente ou vazio — ${c}`);
   }
+  if (!m.textoEditorial && !m.consideracao?.trim()) erro(`${rot}: consideração ausente`);
   if (!idsPrincipios.has(m.principio)) erro(`${rot}: princípio desconhecido — ${m.principio}`);
   if (vistos.has(m.n)) erro(`${rot}: número duplicado`);
   vistos.add(m.n);
 }
 
 const normaliza = (s) => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
-const camposUnicos = ['titulo', 'termo', 'contexto', 'reflexao', 'pergunta'];
+const camposUnicos = ['titulo', 'reflexao', 'pergunta'];
 for (const campo of camposUnicos) {
   const textos = new Map();
   for (const m of D.MEDITACOES) {
@@ -53,16 +56,20 @@ for (const campo of camposUnicos) {
   }
 }
 
-if (!D.CALENDARIO || D.CALENDARIO.fuso !== 'America/Sao_Paulo') {
+const calendario = D.CALENDARIO;
+if (calendario?.fuso !== 'America/Sao_Paulo') {
   erro('CALENDARIO deve declarar o fuso America/Sao_Paulo');
 }
-if (D.CALENDARIO?.cicloCompleto && D.MEDITACOES.length !== 366) {
-  erro('ciclo anual só pode ser marcado como completo com exatamente 366 meditações');
-}
 const idsMeditacoes = new Set(D.MEDITACOES.map((m) => m.n));
-for (const [dia, id] of Object.entries(D.CALENDARIO?.porDiaDoAno ?? {})) {
-  if (+dia < 1 || +dia > 366) erro(`dia inválido no calendário: ${dia}`);
-  if (!idsMeditacoes.has(id)) erro(`calendário aponta para meditação inexistente: ${id}`);
+const porData = calendario?.porData ?? {};
+const porDataIds = new Set(Object.values(porData));
+if (!calendario?.cicloCompleto || idsMeditacoes.size !== 366 ||
+    Object.keys(porData).length !== 366 || porDataIds.size !== 366) {
+  erro('o calendário precisa de 366 datas com uma reflexão diferente em cada data');
+}
+for (let dia = 1; dia <= 366; dia += 1) {
+  const data = new Date(Date.UTC(2000, 0, dia)).toISOString().slice(5, 10);
+  if (!idsMeditacoes.has(porData[data])) erro(`calendário sem meditação válida para ${data}`);
 }
 
 if (!Array.isArray(D.INDICE_EDITORIAL) || D.INDICE_EDITORIAL.length !== D.MEDITACOES.length) {
@@ -306,7 +313,7 @@ const precisa = [
   'CNAME', 'robots.txt', 'sitemap.xml', 'manifest.webmanifest', 'sw.js',
   'offline.html', '404.html', 'index.html', 'devocional.html',
   'metodo-editorial.html', 'conceitos.html', 'assets/css/site.css',
-  'assets/js/app.js', 'assets/js/devocional.js', 'assets/data/reflexoes.js'
+  'assets/js/app.js', 'assets/js/devocional.js', 'assets/data/reflexoes.js', 'assets/data/ciclo-anual.js'
 ];
 for (const f of precisa) if (!existsSync(join(docs, f))) erro(`arquivo ausente: docs/${f}`);
 for (const f of ['README.md', 'LICENSE']) if (!existsSync(join(raiz, f))) erro(`arquivo ausente na raiz: ${f}`);

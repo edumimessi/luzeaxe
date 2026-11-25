@@ -92,9 +92,9 @@ Deliberadamente ausentes: fontes decorativas ditas "tribais", colagens genericam
 
 ## Conteúdo devocional
 
-Ciclo previsto de 366 meditações; **30 escritas**, seis por princípio, definindo o padrão editorial. As demais devem ser escritas com autoria própria e passar por revisão externa. Enquanto o ciclo não estiver completo, a interface declara que percorre um acervo preliminar; não apresenta a rotação como 366 leituras inéditas.
+O acervo inclui 366 reflexões: 30 leituras anteriores e 336 novos textos editoriais preliminares, pendentes de revisão externa. Cada texto novo tem reflexão e pergunta próprias, com uma nota de vocabulário baseada nas fontes já apresentadas no acervo.
 
-O calendário fica em `LUZEAXE.CALENDARIO`, com fuso fixado em `America/Sao_Paulo`. A posição anual é explícita e estável: acrescentar uma meditação não pode deslocar silenciosamente as demais. `cicloCompleto` somente pode ser ativado quando as 366 entradas existirem e forem validadas.
+O calendário em `LUZEAXE.CALENDARIO.porData` usa mês e dia no fuso `America/Sao_Paulo`. A leitura de 29 de fevereiro permanece no acervo durante anos comuns. As leituras de março a dezembro conservam a mesma data em qualquer ano.
 
 Cada leitura também possui uma entrada em `LUZEAXE.INDICE_EDITORIAL`, ligando termo, tradição e fonte. O localizador bibliográfico permanece nulo até conferência direta na edição consultada; página ou capítulo nunca são inferidos nem fabricados.
 
