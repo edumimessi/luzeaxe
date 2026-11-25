@@ -8,6 +8,8 @@
 
   var D = window.LUZEAXE || {};
   var indiceAtual = 0;
+  var lista = D.MEDITACOES || [];
+  var chaveFavoritos = 'luzeaxe-favoritos';
 
   function esc(s) {
     return String(s == null ? '' : s)
@@ -82,58 +84,138 @@
     }
     h += bloco('aplicacao', 'Pergunta aberta', 'Para ficar com você', m.pergunta);
 
-    if (D.NOTA_CUIDADO) {
-      h += '<div class="nota-cuidado"><strong>Nota de cuidado</strong><p>' +
-           esc(D.NOTA_CUIDADO.longa) + '</p></div>';
-    }
     return h;
   }
 
   function mostra(i) {
-    var lista = D.MEDITACOES || [];
     if (!lista.length) return;
     indiceAtual = ((i % lista.length) + lista.length) % lista.length;
     var alvo = el('leitor');
     if (alvo) alvo.innerHTML = monta(lista[indiceAtual]);
     var pos = el('posicao');
     if (pos) pos.textContent = (indiceAtual + 1) + ' / ' + lista.length;
+    atualizaFavorito();
+    el('link-leitura').hidden = true;
+    el('leitor-status').textContent = 'Leitura ' + (indiceAtual + 1) + ': ' + lista[indiceAtual].titulo;
+  }
+
+  function favoritos() {
+    try {
+      var ids = JSON.parse(localStorage.getItem(chaveFavoritos) || '[]');
+      return Array.isArray(ids) ? ids : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function atualizaFavorito() {
+    el('favoritar').setAttribute('aria-pressed', String(favoritos().includes(lista[indiceAtual].n)));
+  }
+
+  function alternaFavorito() {
+    var id = lista[indiceAtual].n;
+    var ids = favoritos();
+    var removendo = ids.includes(id);
+    try {
+      localStorage.setItem(chaveFavoritos, JSON.stringify(removendo
+        ? ids.filter(function (item) { return item !== id; })
+        : ids.concat(id)));
+    } catch (e) {
+      el('leitor-status').textContent = 'O navegador não permitiu salvar favoritos.';
+      return;
+    }
+    atualizaFavorito();
+    filtraAcervo();
+    el('leitor-status').textContent = removendo ? 'Leitura removida dos favoritos.' : 'Leitura salva nos favoritos.';
+  }
+
+  function normaliza(texto) {
+    return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  }
+
+  function filtraAcervo() {
+    var busca = normaliza(el('buscar-leitura').value);
+    var soFavoritos = el('so-favoritos').checked;
+    var ids = favoritos();
+    var total = 0;
+    document.querySelectorAll('[data-leitura]').forEach(function (item) {
+      var m = lista.find(function (leitura) { return String(leitura.n) === item.dataset.leitura; });
+      var texto = normaliza([m.titulo, m.termo, nomePrincipio(m.principio)].join(' '));
+      item.hidden = !texto.includes(busca) || (soFavoritos && !ids.includes(m.n));
+      if (!item.hidden) total += 1;
+    });
+    el('resultado-acervo').textContent = total === 0 ? 'Nenhuma leitura encontrada.' :
+      total === 1 ? '1 leitura encontrada.' : total + ' leituras encontradas.';
+  }
+
+  async function compartilha() {
+    var m = lista[indiceAtual];
+    var url = new URL(window.location.href);
+    url.searchParams.set('leitura', m.n);
+    url.hash = 'leitor';
+    try {
+      if (navigator.share) {
+        await navigator.share({ title: m.titulo + ' — Luz e Axé', url: url.href });
+        return;
+      }
+      await navigator.clipboard.writeText(url.href);
+      el('leitor-status').textContent = 'Link copiado.';
+    } catch (e) {
+      if (e.name === 'AbortError') return;
+      var campo = el('url-leitura');
+      el('link-leitura').hidden = false;
+      campo.value = url.href;
+      campo.focus();
+      campo.select();
+    }
   }
 
   function iniciar() {
     var alvo = el('leitor');
     if (!alvo) return;
-    var lista = D.MEDITACOES || [];
     if (!lista.length) { alvo.innerHTML = '<p>Nenhuma meditação publicada.</p>'; return; }
 
     var calendario = D.CALENDARIO || {};
     var fuso = calendario.fuso || 'America/Sao_Paulo';
-    var dia = diaDoAnoNoFuso(fuso, new Date());
-    var idDoDia = calendario.porDiaDoAno && calendario.porDiaDoAno[dia];
-    var indiceDoDia = lista.findIndex(function (m) { return m.n === idDoDia; });
-
-    if (calendario.cicloCompleto && indiceDoDia >= 0) {
-      mostra(indiceDoDia);
-    } else {
-      /* Acervo preliminar: seleção estável, explicitamente não anual. */
-      mostra((dia - 1) % lista.length);
-      var aviso = el('aviso-ciclo');
-      if (aviso) aviso.hidden = false;
+    function indiceDeHoje() {
+      var dia = diaDoAnoNoFuso(fuso, new Date());
+      var id = calendario.porDiaDoAno && calendario.porDiaDoAno[dia];
+      var i = lista.findIndex(function (m) { return m.n === id; });
+      return calendario.cicloCompleto && i >= 0 ? i : (dia - 1) % lista.length;
     }
 
-    var ant = el('anterior'), pro = el('proxima'), hoje = el('hoje');
-    if (ant) ant.addEventListener('click', function () { mostra(indiceAtual - 1); });
-    if (pro) pro.addEventListener('click', function () { mostra(indiceAtual + 1); });
-    if (hoje) hoje.addEventListener('click', function () {
-      var d = diaDoAnoNoFuso(fuso, new Date());
-      var id = calendario.porDiaDoAno && calendario.porDiaDoAno[d];
-      var i = lista.findIndex(function (m) { return m.n === id; });
-      mostra(calendario.cicloCompleto && i >= 0 ? i : (d - 1) % lista.length);
-    });
+    function abreEndereco() {
+      var id = new URLSearchParams(window.location.search).get('leitura');
+      var i = lista.findIndex(function (m) { return String(m.n) === id; });
+      mostra(i >= 0 ? i : indiceDeHoje());
+    }
+
+    function navega(i, hoje) {
+      mostra(i);
+      var url = new URL(window.location.href);
+      if (hoje) url.searchParams.delete('leitura');
+      else url.searchParams.set('leitura', lista[indiceAtual].n);
+      window.history.replaceState(null, '', url);
+    }
+
+    el('aviso-ciclo').hidden = Boolean(calendario.cicloCompleto);
+    abreEndereco();
+    window.addEventListener('popstate', abreEndereco);
+
+    el('anterior').addEventListener('click', function () { navega(indiceAtual - 1); });
+    el('proxima').addEventListener('click', function () { navega(indiceAtual + 1); });
+    el('hoje').addEventListener('click', function () { navega(indiceDeHoje(), true); });
+    el('favoritar').addEventListener('click', alternaFavorito);
+    el('compartilhar').addEventListener('click', compartilha);
+    el('buscar-leitura').addEventListener('input', filtraAcervo);
+    el('so-favoritos').addEventListener('change', filtraAcervo);
+    filtraAcervo();
 
     document.addEventListener('keydown', function (e) {
-      if (e.target && /INPUT|TEXTAREA/.test(e.target.tagName)) return;
-      if (e.key === 'ArrowLeft') mostra(indiceAtual - 1);
-      if (e.key === 'ArrowRight') mostra(indiceAtual + 1);
+      if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey ||
+          e.target.closest('input, textarea, select, [contenteditable]')) return;
+      if (e.key === 'ArrowLeft') navega(indiceAtual - 1);
+      if (e.key === 'ArrowRight') navega(indiceAtual + 1);
     });
   }
 

@@ -144,7 +144,7 @@ paginas.push({
     <p class="sub">Um espaço em português sobre as tradições afro-brasileiras e a busca de sentido. Cada bloco de texto diz de qual tradição fala, qual obra o sustenta e se é síntese educativa ou reflexão do autor — para que interpretação nunca seja confundida com doutrina.</p>
     <div class="acoes">
       <a class="botao cheio" href="devocional.html">Ler a meditação de hoje</a>
-      <a class="botao" href="metodo-editorial.html">Como este site é escrito</a>
+      <a class="botao" href="devocional.html#acervo">Explorar o acervo</a>
     </div>
   </div>
 
@@ -203,9 +203,32 @@ paginas.push({
     <div class="leitor" id="leitor"><p>Carregando a leitura de hoje…</p></div>
     <div class="navega">
       <button type="button" id="anterior">← Anterior</button>
-      <button type="button" id="hoje">Hoje <span id="posicao"></span></button>
+      <button type="button" id="hoje">Hoje <span id="posicao" aria-hidden="true"></span></button>
       <button type="button" id="proxima">Próxima →</button>
     </div>
+    <div class="navega leitor-acoes">
+      <button type="button" id="favoritar" aria-pressed="false">Salvar nos favoritos</button>
+      <button type="button" id="compartilhar">Compartilhar leitura</button>
+    </div>
+    <p id="leitor-status" class="origem" role="status"></p>
+    <div id="link-leitura" hidden>
+      <label for="url-leitura">Link da leitura</label>
+      <input id="url-leitura" type="url" readonly>
+    </div>
+  </section>
+
+  <section class="envolt acervo" id="acervo">
+    <h2>Acervo de meditações</h2>
+    <div class="acervo-filtros">
+      <label>Buscar por título, termo ou princípio
+        <input id="buscar-leitura" type="search" autocomplete="off">
+      </label>
+      <label class="so-favoritos"><input id="so-favoritos" type="checkbox"> Mostrar apenas favoritos</label>
+    </div>
+    <p id="resultado-acervo" class="origem" role="status"></p>
+    <ul class="limpa acervo-lista">
+      ${D.MEDITACOES.map((m) => `<li data-leitura="${m.n}"><a href="devocional.html?leitura=${m.n}#leitor">${esc(m.titulo)}</a><span>${esc(m.termo)}</span></li>`).join('\n      ')}
+    </ul>
   </section>`
 });
 
