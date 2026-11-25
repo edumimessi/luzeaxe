@@ -82,7 +82,7 @@ scripts/validate.mjs           auditoria editorial e técnica
 
 As páginas de conteúdo têm o texto **embutido no HTML**, geradas por `build.mjs`. O site é legível e indexável sem JavaScript, e os dados mantêm fonte única. Só o devocional renderiza no cliente, porque depende da data corrente.
 
-`docs/metodologia.html` e `docs/praticas.html` são apenas redirecionamentos de endereços antigos, e `docs/assets/css/styles.css` é resíduo obsoleto — os três podem ser apagados.
+`docs/caminhos.html` e `docs/praticas.html` são páginas estáticas mantidas fora do gerador.
 
 ## Identidade visual — "Raízes de Luz"
 
@@ -128,6 +128,8 @@ python3 -m http.server 8000 --directory docs
 Sem bundler e sem dependências: os dois scripts usam apenas Node puro.
 
 O validador bloqueia a publicação quando encontra prática ritual prescrita, tradição não nomeada, síntese sem fonte com ano, vocabulário clínico nas práticas, formulação que opõe espiritualidade a tratamento, sofrimento lido como sinal espiritual, citação sem procedência, termo técnico que deve permanecer velado, link para a clínica, link em HTTP, link interno quebrado, CSS embutido nas páginas, página sem nota de cuidado ou service worker devolvendo HTML no lugar de um recurso.
+
+O leitor oferece busca no acervo, favoritos salvos no navegador e links individuais no formato `devocional.html?leitura=12`.
 
 ## Publicação
 

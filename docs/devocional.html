@@ -63,9 +63,61 @@
     <div class="leitor" id="leitor"><p>Carregando a leitura de hoje…</p></div>
     <div class="navega">
       <button type="button" id="anterior">← Anterior</button>
-      <button type="button" id="hoje">Hoje <span id="posicao"></span></button>
+      <button type="button" id="hoje">Hoje <span id="posicao" aria-hidden="true"></span></button>
       <button type="button" id="proxima">Próxima →</button>
     </div>
+    <div class="navega leitor-acoes">
+      <button type="button" id="favoritar" aria-pressed="false">Salvar nos favoritos</button>
+      <button type="button" id="compartilhar">Compartilhar leitura</button>
+    </div>
+    <p id="leitor-status" class="origem" role="status"></p>
+    <div id="link-leitura" hidden>
+      <label for="url-leitura">Link da leitura</label>
+      <input id="url-leitura" type="url" readonly>
+    </div>
+  </section>
+
+  <section class="envolt acervo" id="acervo">
+    <h2>Acervo de meditações</h2>
+    <div class="acervo-filtros">
+      <label>Buscar por título, termo ou princípio
+        <input id="buscar-leitura" type="search" autocomplete="off">
+      </label>
+      <label class="so-favoritos"><input id="so-favoritos" type="checkbox"> Mostrar apenas favoritos</label>
+    </div>
+    <p id="resultado-acervo" class="origem" role="status"></p>
+    <ul class="limpa acervo-lista">
+      <li data-leitura="1"><a href="devocional.html?leitura=1#leitor">Você chegou no meio da história</a><span>Ìtàn</span></li>
+      <li data-leitura="2"><a href="devocional.html?leitura=2#leitor">A travessia que ninguém escolheu</a><span>Kalunga</span></li>
+      <li data-leitura="3"><a href="devocional.html?leitura=3#leitor">A cabeça que é sua</a><span>Orí</span></li>
+      <li data-leitura="4"><a href="devocional.html?leitura=4#leitor">O que foi escolhido e o que resta escolher</a><span>Àyànmọ́</span></li>
+      <li data-leitura="5"><a href="devocional.html?leitura=5#leitor">Caráter é o que fica</a><span>Ìwà</span></li>
+      <li data-leitura="6"><a href="devocional.html?leitura=6#leitor">Saudar antes de pedir</a><span>Ìbà</span></li>
+      <li data-leitura="7"><a href="devocional.html?leitura=7#leitor">A força que só existe circulando</a><span>Àṣẹ</span></li>
+      <li data-leitura="8"><a href="devocional.html?leitura=8#leitor">O sopro que não é seu</a><span>Ẹ̀mí</span></li>
+      <li data-leitura="9"><a href="devocional.html?leitura=9#leitor">Pessoa é sempre pessoa-com</a><span>Muntu</span></li>
+      <li data-leitura="10"><a href="devocional.html?leitura=10#leitor">A palavra tem peso</a><span>Ọ̀rọ̀</span></li>
+      <li data-leitura="11"><a href="devocional.html?leitura=11#leitor">Bem-estar não é ausência de problema</a><span>Ire</span></li>
+      <li data-leitura="12"><a href="devocional.html?leitura=12#leitor">O que o peito sabe</a><span>Ẹ̀rí-ọkàn</span></li>
+      <li data-leitura="13"><a href="devocional.html?leitura=13#leitor">Pertencer é aceitar ter lugar</a><span>Egbé</span></li>
+      <li data-leitura="14"><a href="devocional.html?leitura=14#leitor">A casa que não é de sangue</a><span>Ìdílé</span></li>
+      <li data-leitura="15"><a href="devocional.html?leitura=15#leitor">Ter chão</a><span>Ilé</span></li>
+      <li data-leitura="16"><a href="devocional.html?leitura=16#leitor">Uma comparação que precisa ser declarada</a><span>Ubuntu</span></li>
+      <li data-leitura="17"><a href="devocional.html?leitura=17#leitor">Amizade é obra, não acaso</a><span>Ọ̀rẹ́</span></li>
+      <li data-leitura="18"><a href="devocional.html?leitura=18#leitor">Dois mundos que se falam</a><span>Aiyê e Òrun</span></li>
+      <li data-leitura="19"><a href="devocional.html?leitura=19#leitor">O corpo não é obstáculo</a><span>Ara</span></li>
+      <li data-leitura="20"><a href="devocional.html?leitura=20#leitor">Caminho se faz com os pés</a><span>Ẹsẹ̀</span></li>
+      <li data-leitura="21"><a href="devocional.html?leitura=21#leitor">A mão que faz</a><span>Ọwọ́</span></li>
+      <li data-leitura="22"><a href="devocional.html?leitura=22#leitor">Estar presente é ser visto</a><span>Ojú</span></li>
+      <li data-leitura="23"><a href="devocional.html?leitura=23#leitor">Ritmo organiza</a><span>Ìlù</span></li>
+      <li data-leitura="24"><a href="devocional.html?leitura=24#leitor">Alegria também é matéria séria</a><span>Ìjó</span></li>
+      <li data-leitura="25"><a href="devocional.html?leitura=25#leitor">O que volta pede outra resposta</a><span>Àtúnwá</span></li>
+      <li data-leitura="26"><a href="devocional.html?leitura=26#leitor">O ano recomeça</a><span>Ọdún</span></li>
+      <li data-leitura="27"><a href="devocional.html?leitura=27#leitor">Tempo não é só relógio</a><span>Àkókò</span></li>
+      <li data-leitura="28"><a href="devocional.html?leitura=28#leitor">Voltar não é retroceder</a><span>Ìpadàbọ̀</span></li>
+      <li data-leitura="29"><a href="devocional.html?leitura=29#leitor">A corrente das gerações</a><span>Ìran</span></li>
+      <li data-leitura="30"><a href="devocional.html?leitura=30#leitor">Paz inteira, não paz de aparência</a><span>Àlàáfíà</span></li>
+    </ul>
   </section>
 
   <div class="envolt" style="padding-bottom:3rem">

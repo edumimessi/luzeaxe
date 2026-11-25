@@ -4,7 +4,7 @@
  * HTML de substituição — devolver uma página no lugar de um CSS, script ou
  * imagem quebra o site em vez de degradá-lo.
  */
-const CACHE = 'luzeaxe-v3';
+const CACHE = 'luzeaxe-v4';
 const OFFLINE = './offline.html';
 
 const ESSENCIAIS = [
@@ -13,7 +13,7 @@ const ESSENCIAIS = [
   './metodo-editorial.html', './autor.html', './offline.html', './404.html',
   './assets/css/site.css',
   './assets/js/app.js', './assets/js/devocional.js', './assets/data/reflexoes.js',
-  './manifest.webmanifest'
+  './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'
 ];
 
 self.addEventListener('install', (e) => {
@@ -27,7 +27,7 @@ self.addEventListener('install', (e) => {
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys()
-      .then((ks) => Promise.all(ks.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then((ks) => Promise.all(ks.filter((k) => k.startsWith('luzeaxe-') && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
@@ -39,14 +39,19 @@ self.addEventListener('fetch', (e) => {
 
   // Navegação: rede primeiro, cache depois, offline.html por último.
   if (req.mode === 'navigate') {
+    const url = new URL(req.url);
+    if (url.pathname.endsWith('/devocional.html')) url.searchParams.delete('leitura');
+    const pagina = url.href;
     e.respondWith(
       fetch(req)
         .then((r) => {
-          const copia = r.clone();
-          caches.open(CACHE).then((c) => c.put(req, copia)).catch(() => {});
+          if (r.ok) {
+            const copia = r.clone();
+            e.waitUntil(caches.open(CACHE).then((c) => c.put(pagina, copia)).catch(() => {}));
+          }
           return r;
         })
-        .catch(() => caches.match(req).then((r) => r || caches.match(OFFLINE)))
+        .catch(() => caches.match(pagina).then((r) => r || caches.match(OFFLINE)))
     );
     return;
   }

@@ -230,3 +230,34 @@ footer.rodape a:hover { color: var(--ouro-claro); }
 .legal { border-top: 1px solid var(--borda); padding-top: 1.2rem; font-size: .81rem; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.leitor-acoes { justify-content: flex-start; }
+.leitor-acoes button[aria-pressed="true"] {
+  color: var(--ouro-claro);
+  border-color: var(--ouro);
+  font-weight: 700;
+}
+.acervo-filtros {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.acervo-filtros input[type="search"], #url-leitura {
+  display: block;
+  width: 100%;
+  padding: .65rem;
+  font: inherit;
+  color: var(--texto);
+  background: var(--indigo-2);
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+}
+.acervo-filtros .so-favoritos { padding-block: .65rem; }
+.acervo-lista li > span {
+  display: block;
+  color: var(--texto-suave);
+  font-size: .9rem;
+}
+#leitor { scroll-margin-top: 6rem; }
